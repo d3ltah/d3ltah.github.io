@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&family=Space+Grotesk&family=DM+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&family=Space+Grotesk&family=Space+Mono&display=swap');
 
 :root {
     --background: #f0f0f0;
@@ -17,6 +17,7 @@
 }
 
 body {
+    margin: 0;
     font-family: 'DM Mono', monospace;
     color: var(--foreground);
     background-color: var(--background);
@@ -39,7 +40,7 @@ h1, h2 {
 h1 {
     font-size: min(4vw, 60px);
     height: 4vw;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 h2 {
@@ -83,7 +84,7 @@ a:hover {
 .name-letter {
     display: inline-block;
     width: fit-content;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Space Mono', monospace;
     color: var(--accent);
 }
 
@@ -155,5 +156,4 @@ a:hover {
 
 #name-cycle {
     display: inline-flex;
-
 }

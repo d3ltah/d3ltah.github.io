@@ -1,5 +1,6 @@
 const ThemeButton = document.getElementById("theme-toggle");
 const ThemeNote = document.getElementById("theme-toggle-note");
+var switchCount = 0;
 
 function toggleThemeCookie() {
     if (window.localStorage.getItem("theme") == "light") {
@@ -19,12 +20,40 @@ function updateTheme() {
         document.documentElement.style.setProperty("--foreground", "#0f0f0f");
         ThemeButton.style.transform = "scaleX(1)";
     }
+
+    if (switchCount >= 10) {
+        breakLights();
+    }
+
     ThemeNote.innerHTML = `Turn on ${window.localStorage.getItem("theme")} mode >`;
+}
+
+function breakLights() {
+    document.getElementsByTagName("main")[0].style.display = "none";
+    document.body.style.backgroundColor = "#000000";
+
+    let brokenTextContainer = document.createElement("div");
+    brokenTextContainer.style.display = "table";
+    brokenTextContainer.style.height = "100vh";
+    brokenTextContainer.style.width = "100vw";
+
+    let brokenText = document.createElement("p");
+    brokenText.innerHTML = "Nice one, you div. You broke the lights.";
+    brokenText.style.textAlign = "center";
+    brokenText.style.display = "table-cell";
+    brokenText.style.verticalAlign = "middle";
+    brokenText.style.color = "#f0f0f0";
+
+    setTimeout(() => {
+        brokenTextContainer.appendChild(brokenText);
+        document.body.appendChild(brokenTextContainer);
+    }, 1000);
 }
 
 function toggleTheme() {
     toggleThemeCookie();
     updateTheme();
+    switchCount++;
 }
 
 updateTheme();
