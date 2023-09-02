@@ -37,7 +37,7 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 4vw;
+    font-size: min(4vw, 60px);
     height: 4vw;
     margin-bottom: 5px;
 }
