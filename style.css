@@ -34,10 +34,16 @@ main {
 
 h1, h2 {
     font-family: 'Space Grotesk', sans-serif;
-    height: 28px;
+}
+
+h1 {
+    font-size: 4vw;
+    height: 4vw;
+    margin-bottom: 5px;
 }
 
 h2 {
+    height: 28px;
     text-align: right;
 }
 
@@ -46,9 +52,10 @@ h6 {
     opacity: 0.5;
 }
 
-a {
+p a {
     color: var(--accent);
     text-decoration: none;
+    white-space: nowrap;
 }
 
 li::marker {
@@ -84,6 +91,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -119,6 +127,7 @@ a:hover {
     color: var(--foreground);
     cursor: pointer;
     transition: all 0.1s ease-out;
+    transition-property: scale, color;
 }
 
 #theme-toggle:hover {
@@ -142,4 +151,9 @@ a:hover {
     opacity: 0;
     margin: 10px;
     transition: all 0.2s ease-out;
+}
+
+#name-cycle {
+    display: inline-flex;
+
 }
