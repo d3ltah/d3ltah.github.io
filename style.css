@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&family=Space+Grotesk&family=DM+Mono&display=swap');
+
+:root {
+    --background: #f0f0f0;
+    --foreground: #0f0f0f;
+    --accent: #d30000;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-5px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: 'DM Mono', monospace;
+    color: var(--foreground);
+    background-color: var(--background);
+    transition: all 0.5s ease;
+    animation: slide-in 1s ease-out;
+    user-select: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 40px;
+}
+
+h1, h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    height: 28px;
+}
+
+h2 {
+    text-align: right;
+}
+
+h6 {
+    margin: 0;
+    opacity: 0.5;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+li::marker {
+    color: var(--accent);
+}
+
+ul, ol {
+    margin: 20px 0;
+}
+
+a:hover {
+    color: var(--background);
+    background-color: var(--accent);
+    cursor: pointer;
+}
+
+.centered {
+    margin-top: 10px;
+}
+
+.pop-animation {
+    animation: slide-in 1s ease-out;
+}
+
+.name-letter {
+    display: inline-block;
+    width: fit-content;
+    font-family: 'DM Mono', monospace;
+    color: var(--accent);
+}
+
+.socials-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    font-weight: bold;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--foreground);
+    transition: background-color 0.2s ease-out;
+}
+
+.social-link:hover {
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.social-link i {
+    margin-right: 10px;
+}
+
+#logo {
+    fill: var(--foreground);
+}
+
+#theme-toggle:hover ~ #theme-toggle-note {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#theme-toggle {
+    color: var(--foreground);
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+}
+
+#theme-toggle:hover {
+    color: var(--accent);
+    background-color: transparent;
+    transform: scale(1.1);
+}
+
+#theme-toggle:active {
+    transform: scale(0.99);
+}
+
+#theme-toggle-section {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+#theme-toggle-note {
+    transform: translateX(5px);
+    opacity: 0;
+    margin: 10px;
+    transition: all 0.2s ease-out;
+}
