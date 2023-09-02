@@ -12,7 +12,7 @@ function animateName() {
             character.classList.add("pop-animation");
             character.classList.add("name-letter");
             NameCycle.appendChild(character);
-        }, 40 * i);
+        }, 50*i);
     }
 
     cycleTicker++;

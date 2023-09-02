@@ -1,6 +1,7 @@
 const ThemeButton = document.getElementById("theme-toggle");
 const ThemeNote = document.getElementById("theme-toggle-note");
 var switchCount = 0;
+var rainbowMode = false;
 
 function toggleThemeCookie() {
     if (window.localStorage.getItem("theme") == "light") {
@@ -54,6 +55,16 @@ function toggleTheme() {
     toggleThemeCookie();
     updateTheme();
     switchCount++;
+}
+
+function rainbowModeToggle() {
+    if (!rainbowMode) {
+        rainbowMode = true;
+        document.documentElement.style.setProperty("--accent", "rainbow-accent 7s linear infinite");
+    } else {
+        rainbowMode = false;
+        document.documentElement.style.setProperty("--accent", "default-accent 7s linear infinite");
+    }
 }
 
 updateTheme();

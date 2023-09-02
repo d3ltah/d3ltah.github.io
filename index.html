@@ -14,21 +14,27 @@
 <body>
     <main>
         <div style="display: flex; justify-content: space-between; align-items: center;">
-            <svg width="60" version="1.1" viewBox="0 0 4.2333 3.5" xml:space="preserve"
+            <a id="logo-button" onclick="rainbowModeToggle()">
+                <svg id="logo" viewBox="0 0 4.2333 3.5"
                 xmlns="http://www.w3.org/2000/svg">
                 <g transform="matrix(.046549 0 0 .046549 -9.0996 -3.4463)" stroke-width="21.483">
                     <path
                         d="m195.48 96.865v11.535h22.642c6.1789 0 11.107 4.9279 11.107 11.107s-4.9279 11.107-11.107 11.107h-22.642v11.535h21.612v5.4e-4h1.0291c12.451 0 22.642-10.191 22.642-22.642s-10.191-22.642-22.642-22.642zm35.382 0 2.9503 1.8948c3.5284 2.2661 6.4479 5.3995 8.4464 9.1l0.29192 0.53993h21.231c4.0726 0 7.591 2.1336 9.5214 5.3395h-28.761l0.22953 1.2195c0.27814 1.4779 0.42993 2.9968 0.42993 4.5479 0 1.5513-0.15172 3.0697-0.42993 4.5479l-0.22953 1.2195h28.761c-1.9305 3.2059-5.4491 5.3395-9.5214 5.3395h-21.231l-0.29192 0.53992c-1.9985 3.7005-4.918 6.8338-8.4464 9.1l-2.9498 1.8948h31.89v5.4e-4h1.0291c12.451 0 22.642-10.191 22.642-22.642s-10.191-22.642-22.642-22.642z"
-                        stroke-width="21.483" style="stroke:none" id="logo" />
+                        stroke-width="21.483" style="stroke:none" id="logo-path" />
                 </g>
-            </svg>
+                </svg>
+            </a>
             <div id="theme-toggle-section">
                 <a id="theme-toggle" onclick="toggleTheme()"><i class="fa-solid fa-toggle-on fa-xl"></i></a>
-                <p id="theme-toggle-note">Turn on dark mode ><p>
+                <p id="theme-toggle-note">Turn on dark mode >
+                <p>
             </div>
         </div>
-        <h1 class="centered">Hello, I'm <span id="name-cycle">D3</span>.</h1>
-        <h6>[ he/him ]</h6>
+        <div id="title-container">
+            <h1>Hello, I'm <span style="width: 0; overflow: hidden; display: inline-block;"
+                    class="name-letter">/</span><span id="name-cycle">D3</span>.</h1>
+        </div>
+        <h6 id="pronouns">[ he/him ]</h6>
         <p>
             I'm a <span id="age-ticker">0</span> year old from
             <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Wales">{ Wales }</a>
@@ -40,40 +46,31 @@
             is someone's Wi-Fi not working, and the solution is turning it on (true story).
         </p>
         <p>
-            If I were to list everything I have tried here, we'd be here all day and this page would
+            If I were to list everything I have tried to master here, we'd be here all day and this page would
             become the next
             <a target="_blank" rel="noopener noreferrer"
-                href="https://libraryofbabel.info/bookmark.cgi?d3_is_a_beefcake">{ Library of Babel }</a>,
+                href="https://libraryofbabel.info/bookmark.cgi?d3_is_a_beefcake">
+                { Library of Babel }</a>,
             so I'm gonna keep it brief - I've tried a LOT of things, and very rarely have I been good at any of them.
         </p>
-        <p>
-            I mean, just take a look at this page's code. It's an absolute rat's nest.
-        </p>
-        <p>
-            Raaamblinggg. Quickfire round! Here's some (not very interesting) things about me:
-        </p>
-        <ul>
-            <li>I started programming when I was 9. (and I'm not an alcoholic <i>yet</i>, go me!)</li>
-            <li>My favourite pastime is hunting for Easter eggs on websites. (<i>wink wink</i>)</li>
-            <li>I have no idea why, but I absolutely love monospaced fonts. (could you tell?)</li>
-            <li>"D3" means absolutely nothing.</li>
-        </ul>
 
         <h2>> Projects</h2>
         <p>I say I'm working on them all, but I guarantee you I'm only working on 2, tops.</p>
         <p>
             I'm an admin and developer at a cosy Discord server called
-            <a target="_blank" rel="noopener noreferrer"
-                href="https://creative-cave.github.io/">{ The Creative Cave }</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://creative-cave.github.io/">
+                { The Creative Cave }</a>
         </p>
         <p>
             I've made several logos & artworks for internet friends
-            - my favourites being the album covers I made for 
-            <a target="_blank" rel="noopener noreferrer"
-                href="https://invesvpo.com/">{ Invesvpo }</a>
+            - my favourites being the album covers I made for
+            <a target="_blank" rel="noopener noreferrer" href="https://invesvpo.com/">{ Invesvpo }</a>
             and
-            <a target="_blank" rel="noopener noreferrer"
-                href="https://www.youtube.com/@sonnydoggymusic/">{ Sonny Doggy }</a>.
+            <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@sonnydoggymusic/">
+                { Sonny Doggy }</a>.
+        </p>
+        <p>
+
         </p>
 
         <h2>> Socials</h2>

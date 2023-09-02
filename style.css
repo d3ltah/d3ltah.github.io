@@ -3,17 +3,61 @@
 :root {
     --background: #f0f0f0;
     --foreground: #0f0f0f;
-    --accent: #d30000;
+    --accent: default-accent 7s linear infinite;
 }
 
 @keyframes slide-in {
     0% {
-        transform: translateY(-5px);
+        transform: translateY(-15px);
         opacity: 0;
     }
-    100% {
+    30% {
         opacity: 1;
     }
+    50% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rainbow-accent {
+    0% {
+      color: #d30000;
+    }
+    25% {
+      color: #ffa500;
+    }
+    37.5% {
+      color: #ffff00;
+    }
+    50% {
+      color: #7fff00;
+    }
+    62.5% {
+      color: #00ffff;
+    }
+    75% {
+      color: #0000ff;
+    }
+    87.5% {
+      color: #9932cc;
+    }
+    100% {
+      color: #ff1493;
+    }
+}
+
+@keyframes default-accent {
+    from {
+        color: #d30000;
+    }
+    to {
+        color: #d30000;
+    }
+}
+
+html {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 body {
@@ -39,8 +83,11 @@ h1, h2 {
 
 h1 {
     font-size: min(4vw, 60px);
-    height: 4vw;
+    height: 1em;
     margin-bottom: 15px;
+    transition: font-size 0.5s ease-out;
+    vertical-align: bottom;
+    line-height: 1.2em;
 }
 
 h2 {
@@ -48,19 +95,15 @@ h2 {
     text-align: right;
 }
 
-h6 {
-    margin: 0;
-    opacity: 0.5;
-}
-
 p a {
-    color: var(--accent);
+    animation: var(--accent);
     text-decoration: none;
+    font-weight: bold;
     white-space: nowrap;
 }
 
 li::marker {
-    color: var(--accent);
+    animation: var(--accent);
 }
 
 ul, ol {
@@ -69,23 +112,12 @@ ul, ol {
 
 a:hover {
     color: var(--background);
-    background-color: var(--accent);
+    background-color: var(--foreground);
     cursor: pointer;
-}
-
-.centered {
-    margin-top: 10px;
 }
 
 .pop-animation {
     animation: slide-in 1s ease-out;
-}
-
-.name-letter {
-    display: inline-block;
-    width: fit-content;
-    font-family: 'Space Mono', monospace;
-    color: var(--accent);
 }
 
 .socials-list {
@@ -115,6 +147,11 @@ a:hover {
     margin-right: 10px;
 }
 
+.name-letter {
+    display: inline-block;
+    height: 1em;
+}
+
 #logo {
     fill: var(--foreground);
 }
@@ -132,7 +169,7 @@ a:hover {
 }
 
 #theme-toggle:hover {
-    color: var(--accent);
+    animation: var(--accent);
     background-color: transparent;
     transform: scale(1.1);
 }
@@ -155,5 +192,27 @@ a:hover {
 }
 
 #name-cycle {
-    display: inline-flex;
+    display: inline-block;
+    white-space: nowrap;
+    font-family: 'Space Mono', monospace;
+    animation: var(--accent);
+}
+
+#pronouns {
+    margin-top: 0;
+    opacity: 0.5;
+}
+
+#logo-button {
+    width: 60px;
+    transition: transform 0.3s ease-out;
+}
+
+#logo-button:hover {
+    transform: scale(1.1);
+    background-color: transparent;
+}
+
+#logo-button:active {
+    transform: scale(0.99);
 }
