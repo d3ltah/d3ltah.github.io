@@ -277,6 +277,7 @@ a:hover {
 
 #spotify-title {
     font-weight: bold;
+    font-size: 1.2em;
     animation: var(--accent);
 }
 
@@ -284,6 +285,7 @@ a:hover {
     font-size: 0.6em;
     font-style: italic;
     opacity: 0.5;
+    transition: font-size 0.3s ease-out;
 }
 
 #spotify-img {

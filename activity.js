@@ -6,9 +6,9 @@ function updateSpotifyDisplay() {
             document.getElementById("spotify-title").innerHTML = track.name;
             document.getElementById("spotify-artist").innerHTML = track.artist.name;
             document.getElementById("spotify-img").src = track.image[3]["#text"];
-
-            if (!track.title == track.album["#text"]) {
-                document.getElementById("spotify-album").style.fontSize = "";
+            
+            if (track.name != track.album["#text"]) {
+                document.getElementById("spotify-album").style.fontSize = "0.6em";
                 document.getElementById("spotify-album").innerHTML = "on " + track.album["#text"];
             } else {
                 document.getElementById("spotify-album").style.fontSize = "0";
@@ -25,6 +25,8 @@ function updateSpotifyDisplay() {
             }
         });
 }
+
+//https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&api_key=6789c0120d1863a44196d2880b1c39b0&format=json&limit=1&user=bbqbeanburger&extended=1
 
 var timeSince = function (date) {
     if (typeof date !== 'object') {
