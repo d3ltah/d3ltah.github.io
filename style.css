@@ -80,7 +80,7 @@
     }
 }
 
-html p {
+html {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
@@ -128,7 +128,8 @@ h2::before {
     margin-right: 6px;
 }
 
-p a {
+p a,
+li a {
     animation: var(--accent);
     text-decoration: none;
     font-weight: bold;
@@ -148,6 +149,16 @@ a:hover {
     color: var(--background);
     background-color: var(--foreground);
     cursor: pointer;
+}
+
+p a::before,
+li a::before {
+    content: '{';
+}
+
+p a::after,
+li a::after {
+    content: '}';
 }
 
 .pop-animation {
@@ -260,7 +271,7 @@ a:hover {
     padding: 15px;
     min-height: 90px;
     width: 100%;
-    margin: 15px auto;
+    margin: 0 auto;
     background-color: var(--foreground);
     flex-wrap: wrap;
     transition: padding 0.3s ease-out;
@@ -290,13 +301,18 @@ a:hover {
     font-size: 0.6em;
     font-style: italic;
     opacity: 0.5;
-    transition: font-size 0.3s ease-out;
+    width: 0;
+    transition: all 0.5s ease-out;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 #spotify-img {
     height: 90px;
+    width: 90px;
+    background-size: contain;
     margin-right: 15px;
-    transition: height 0.3s ease-out;
+    transition: all 1s ease-in-out;
     align-self: center;
 }
 
@@ -305,6 +321,7 @@ a:hover {
     height: 1em;
     display: flex;
     align-content: center;
+    margin-top: 10px;
 }
 
 #spotify-uts {

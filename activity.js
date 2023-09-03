@@ -5,13 +5,15 @@ function updateSpotifyDisplay() {
             var track = json.recenttracks.track[0];
             document.getElementById("spotify-title").innerHTML = track.name;
             document.getElementById("spotify-artist").innerHTML = track.artist.name;
-            document.getElementById("spotify-img").src = track.image[3]["#text"];
+            document.getElementById("spotify-img").style.backgroundImage = `url(${track.image[3]["#text"]})`;
             
             if (track.name != track.album["#text"]) {
-                document.getElementById("spotify-album").style.fontSize = "0.6em";
                 document.getElementById("spotify-album").innerHTML = "on " + track.album["#text"];
+                document.getElementById("spotify-album").style.width = "100%";
+                document.getElementById("spotify-album").style.height = "1em";
             } else {
-                document.getElementById("spotify-album").style.fontSize = "0";
+                document.getElementById("spotify-album").style.width = "0";
+                document.getElementById("spotify-album").style.height = "0";
             }
 
             let nowPlaying = track['@attr'] ? track['@attr'].nowplaying === "true" : false;
