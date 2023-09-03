@@ -1,5 +1,6 @@
 const ThemeButton = document.getElementById("theme-toggle");
 const ThemeNote = document.getElementById("theme-toggle-note");
+const FuseSound = new Audio("SatisfactoryFuse.wav")
 var switchCount = 0;
 var rainbowMode = false;
 
@@ -45,10 +46,14 @@ function breakLights() {
     brokenText.style.verticalAlign = "middle";
     brokenText.style.color = "#f0f0f0";
 
+    FuseSound.play();
     setTimeout(() => {
         brokenTextContainer.appendChild(brokenText);
         document.body.appendChild(brokenTextContainer);
     }, 1000);
+    setTimeout(() => {
+        brokenTextContainer.load();
+    }, 3000);
 }
 
 function toggleTheme() {
