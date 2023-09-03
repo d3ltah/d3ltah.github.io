@@ -55,9 +55,7 @@ var key = "6789c0120d1863a44196d2880b1c39b0";
 
 var xmlHttp = new XMLHttpRequest();
 
-// http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&api_key=6789c0120d1863a44196d2880b1c39b0&format=json&limit=1&user=bbqbeanburger&extended=1
-
-fetch(`http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&api_key=${key}&format=json&limit=1&user=bbqbeanburger&extended=1`)
+fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&api_key=${key}&format=json&limit=1&user=bbqbeanburger&extended=1`)
     .then((response) => response.json())
     .then((json) => {
         var lastPlayed = json.recenttracks.track[0];
