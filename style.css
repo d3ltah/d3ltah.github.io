@@ -268,14 +268,14 @@ li a::after {
     box-sizing: border-box;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
-    min-height: 90px;
+    height: 90px;
     width: 100%;
     margin: 0 auto;
     background-color: var(--foreground);
     flex-wrap: wrap;
     transition: padding 0.3s ease-out;
     line-height: 1.2;
+    overflow: hidden;
 }
 
 #spotify-button {
@@ -322,6 +322,7 @@ li a::after {
     display: flex;
     align-content: center;
     margin-top: 10px;
+    margin-right: 10px;
 }
 
 #spotify-uts {
