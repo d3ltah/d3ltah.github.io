@@ -1,5 +1,5 @@
 var cycleTicker = 0;
-const Names = ["D3", "deltah", "bbqbeanburger", "D3LTAH"];
+const Names = ["D3", "deltah", "bbqbeanburger", "D3LTAH", "D3IsADumbass"];
 const NameCycle = document.getElementById("name-cycle");
 
 function animateName() {
