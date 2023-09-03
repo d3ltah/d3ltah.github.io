@@ -122,6 +122,12 @@ h2 {
     text-align: right;
 }
 
+h2::before {
+    content: '>> ';
+    animation: var(--accent);
+    margin-right: 6px;
+}
+
 p a {
     animation: var(--accent);
     text-decoration: none;
