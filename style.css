@@ -108,6 +108,16 @@ h3 {
     font-family: 'Space Grotesk', sans-serif;
 }
 
+h6 {
+    opacity: 1;
+}
+
+h6 a {
+    animation: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
 h1 {
     font-size: min(4vw, 60px);
     height: 1em;
@@ -273,7 +283,6 @@ li a::after {
     margin: 0 auto;
     background-color: var(--foreground);
     flex-wrap: wrap;
-    transition: padding 0.3s ease-out;
     line-height: 1.2;
     overflow: hidden;
 }
@@ -295,6 +304,9 @@ li a::after {
     font-weight: bold;
     font-size: 1.2em;
     animation: var(--accent);
+    text-overflow: clip;
+    width: 50%;
+    white-space: nowrap;
 }
 
 #spotify-album {
@@ -314,6 +326,7 @@ li a::after {
     margin-right: 15px;
     transition: all 1s ease-in-out;
     align-self: center;
+    overflow: hidden;
 }
 
 #spotify-uts-container {
