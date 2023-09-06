@@ -23,7 +23,7 @@ function updateTheme() {
         ThemeButton.style.transform = "scaleX(1)";
     }
 
-    if (switchCount >= 10) {
+    if (switchCount > 10) {
         breakLights();
     }
 
