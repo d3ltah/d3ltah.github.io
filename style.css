@@ -4,6 +4,7 @@
   --background: #f0f0f0;
   --foreground: #0f0f0f;
   --accent: default-accent 7s linear infinite;
+  --spotify-live-dot-size: 0.8em;
 }
 
 @keyframes slide-in {
@@ -13,7 +14,7 @@
   }
 
   30% {
-    opacity: 1;
+    opacity: 0.5;
     transform: translateY(5px);
   }
 
@@ -298,6 +299,7 @@ li a::after {
 
 #spotify-button:hover {
   background-color: inherit;
+  color: inherit;
 }
 
 #spotify-song {
@@ -343,6 +345,7 @@ li a::after {
   height: 1em;
   display: flex;
   align-content: center;
+  align-items: center;
   margin-top: 10px;
   margin-right: 10px;
 }
@@ -358,8 +361,16 @@ li a::after {
 
 #spotify-live-dot {
   height: 0.8em;
-  margin: 2px 6px;
-  animation: var(--accent), pulse 2s infinite;
+  animation: pulse 1s infinite;
+  align-self: baseline;
+}
+
+#spotify-live-dot::before {
+  transform: scale(var(--spotify-live-dot-size));
+  transition: transform 0.5s ease-in-out;
+  animation: var(--accent);
+  margin-right: 3px;
+  display: block;
 }
 
 #lyric-quote-container {

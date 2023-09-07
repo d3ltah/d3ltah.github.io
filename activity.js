@@ -19,10 +19,10 @@ function updateSpotifyDisplay() {
             let nowPlaying = track['@attr'] ? track['@attr'].nowplaying === "true" : false;
 
             if (nowPlaying == true) {
-                document.getElementById("spotify-live-dot").style.visibility = "visible";
+                document.documentElement.style.setProperty("--spotify-live-dot-size", 1);
                 document.getElementById("spotify-uts").innerHTML = "Now Playing";
             } else {
-                document.getElementById("spotify-live-dot").style.visibility = "hidden";
+                document.documentElement.style.setProperty("--spotify-live-dot-size", 0);
                 document.getElementById("spotify-uts").innerHTML = timeSince(track.date.uts * 1000) + " ago";
             }
         });
