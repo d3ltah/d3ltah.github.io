@@ -49,7 +49,7 @@ function updateSpotifyDisplay() {
 function updateTopArtists() {
   var artists = [];
   fetch(
-    `https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=bbqbeanburger&api_key=${key}&format=json&limit=5`
+    `https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=bbqbeanburger&api_key=${key}&format=json&limit=7`
   )
     .then((response) => response.json())
     .then((json) => {

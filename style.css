@@ -383,16 +383,13 @@ li a::after {
   flex-wrap: wrap;
   align-items: center;
   align-content: stretch;
-  justify-content: space-between;
-  flex-grow: 1;
 }
 
 #spotify-artists p {
-  margin: 0;
-  text-align: center;
+  margin: 5px;
   flex-grow: 1;
-  flex: 1 1 0;
-  width: 300px;
+  text-align: center;
+  width: fit-content;
   white-space: nowrap;
   background-color: var(--foreground);
   color: var(--background);
