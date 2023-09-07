@@ -320,6 +320,10 @@ li a::after {
   white-space: nowrap;
 }
 
+#spotify-artist {
+  font-family: "Space Mono", monospace;
+}
+
 #spotify-album {
   font-size: 0.6em;
   font-style: italic;
@@ -374,6 +378,7 @@ li a::after {
 }
 
 #spotify-artists {
+  font-family: "Space Mono", monospace;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
