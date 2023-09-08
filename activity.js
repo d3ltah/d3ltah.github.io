@@ -13,7 +13,7 @@ function updateSpotifyDisplay() {
       document.getElementById("spotify-artist").innerHTML = track.artist.name;
       document.getElementById(
         "spotify-img"
-      ).style.backgroundImage = `url(${track.image[3]["#text"]})`;
+      ).src = track.image[3]["#text"];
 
       if (track.name != track.album["#text"]) {
         document.getElementById("spotify-album").innerHTML =
