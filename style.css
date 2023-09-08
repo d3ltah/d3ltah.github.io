@@ -196,6 +196,8 @@ li a::after {
   color: var(--foreground);
   transition: background-color 0.2s ease-out;
   text-decoration: none;
+  border-radius: 10px;
+  margin: 0 0.5em;
 }
 
 .social-link:hover {
@@ -289,6 +291,7 @@ li a::after {
   flex-wrap: wrap;
   line-height: 1.2;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 #spotify-button {
@@ -395,6 +398,7 @@ li a::after {
   color: var(--background);
   padding: 10px;
   margin: 3px;
+  border-radius: 10px;
 }
 
 #lyric-quote-container {
