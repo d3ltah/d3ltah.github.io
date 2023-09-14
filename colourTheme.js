@@ -1,6 +1,6 @@
 const ThemeButton = document.getElementById("theme-toggle");
 const ThemeNote = document.getElementById("theme-toggle-note");
-const FuseSound = new Audio("SatisfactoryFuse.wav")
+const FuseSound = new Audio("../SatisfactoryFuse.wav")
 var switchCount = 0;
 var rainbowMode = false;
 

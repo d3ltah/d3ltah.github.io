@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			http-equiv="Cache-Control"
+			content="no-cache, no-store, must-revalidate"
+		/>
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+
+		<title>D3 Gallery</title>
+		<link rel="stylesheet" href="../style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
+
+	<body>
+		<main>
+			<div>
+				<div
+					style="
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+					"
+				>
+					<h1>Gallery</h1>
+					<div id="theme-toggle-section">
+						<a id="theme-toggle" onclick="toggleTheme()"
+							><i class="fa-solid fa-toggle-on fa-xl"></i
+						></a>
+						<p id="theme-toggle-note">Turn on dark mode ></p>
+						<p></p>
+					</div>
+				</div>
+			</div>
+				<p style="text-align: center; font-size: min(150px, 5vw); font-weight: 900; margin: 0;">🕙</p>
+				<p style="text-align: center; font-size: min(50px, 3vw); font-weight: 900; margin: 0;">
+					Roses are red, violets are blue<br>
+					D3 clearly has better things to do
+				</p>
+		</main>
+
+		<script src="../colourTheme.js"></script>
+		<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+		<script>twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });</script>
+	</body>
+</html>

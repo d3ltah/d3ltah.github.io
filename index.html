@@ -1,263 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
-    />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			http-equiv="Cache-Control"
+			content="no-cache, no-store, must-revalidate"
+		/>
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
 
-    <title>D3</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+		<title>D3</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
 
-  <body>
+	<body>
     <main>
-      <div
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <a id="logo-button" onclick="rainbowModeToggle()">
-          <svg
-            id="logo"
-            viewBox="0 0 4.2333 3.5"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g
-              transform="matrix(.046549 0 0 .046549 -9.0996 -3.4463)"
-              stroke-width="21.483"
-            >
-              <path
-                d="m195.48 96.865v11.535h22.642c6.1789 0 11.107 4.9279 11.107 11.107s-4.9279 11.107-11.107 11.107h-22.642v11.535h21.612v5.4e-4h1.0291c12.451 0 22.642-10.191 22.642-22.642s-10.191-22.642-22.642-22.642zm35.382 0 2.9503 1.8948c3.5284 2.2661 6.4479 5.3995 8.4464 9.1l0.29192 0.53993h21.231c4.0726 0 7.591 2.1336 9.5214 5.3395h-28.761l0.22953 1.2195c0.27814 1.4779 0.42993 2.9968 0.42993 4.5479 0 1.5513-0.15172 3.0697-0.42993 4.5479l-0.22953 1.2195h28.761c-1.9305 3.2059-5.4491 5.3395-9.5214 5.3395h-21.231l-0.29192 0.53992c-1.9985 3.7005-4.918 6.8338-8.4464 9.1l-2.9498 1.8948h31.89v5.4e-4h1.0291c12.451 0 22.642-10.191 22.642-22.642s-10.191-22.642-22.642-22.642z"
-                stroke-width="21.483"
-                style="stroke: none"
-                id="logo-path"
-              />
-            </g>
-          </svg>
-        </a>
-        <div id="theme-toggle-section">
-          <a id="theme-toggle" onclick="toggleTheme()"
-            ><i class="fa-solid fa-toggle-on fa-xl"></i
-          ></a>
-          <p id="theme-toggle-note">Turn on dark mode ></p>
-          <p></p>
-        </div>
-      </div>
-      <div id="title-container">
-        <h1>
-          Hey, I'm
-          <span
-            style="width: 0; overflow: hidden; display: inline-block"
-            class="name-letter"
-            >/</span
-          ><span id="name-cycle">D3</span>.
-        </h1>
-      </div>
-      <h6><span id="pronouns">[ he/him ]</span></h6>
+			<div
+				style="
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+				"
+			>
+				<a id="logo-button" onclick="rainbowModeToggle()">
+					<svg
+						id="logo"
+						viewBox="0 0 4.2333 3.5"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<g
+							transform="matrix(.046549 0 0 .046549 -9.0996 -3.4463)"
+							stroke-width="21.483"
+						>
+							<path
+								d="m195.48 96.865v11.535h22.642c6.1789 0 11.107 4.9279 11.107 11.107s-4.9279 11.107-11.107 11.107h-22.642v11.535h21.612v5.4e-4h1.0291c12.451 0 22.642-10.191 22.642-22.642s-10.191-22.642-22.642-22.642zm35.382 0 2.9503 1.8948c3.5284 2.2661 6.4479 5.3995 8.4464 9.1l0.29192 0.53993h21.231c4.0726 0 7.591 2.1336 9.5214 5.3395h-28.761l0.22953 1.2195c0.27814 1.4779 0.42993 2.9968 0.42993 4.5479 0 1.5513-0.15172 3.0697-0.42993 4.5479l-0.22953 1.2195h28.761c-1.9305 3.2059-5.4491 5.3395-9.5214 5.3395h-21.231l-0.29192 0.53992c-1.9985 3.7005-4.918 6.8338-8.4464 9.1l-2.9498 1.8948h31.89v5.4e-4h1.0291c12.451 0 22.642-10.191 22.642-22.642s-10.191-22.642-22.642-22.642z"
+								stroke-width="21.483"
+								style="stroke: none"
+								id="logo-path"
+							/>
+						</g>
+					</svg>
+				</a>
+				<div id="theme-toggle-section">
+					<a id="theme-toggle" onclick="toggleTheme()"
+						><i class="fa-solid fa-toggle-on fa-xl"></i
+					></a>
+					<p id="theme-toggle-note">Turn on dark mode ></p>
+					<p></p>
+				</div>
+			</div>
+			<div id="title-container">
+				<h1>
+					Hey, I'm
+					<span
+						style="width: 0; overflow: hidden; display: inline-block"
+						class="name-letter"
+						>/</span
+					><span id="name-cycle">D3</span>.
+				</h1>
+			</div>
+			<h6><span id="pronouns">[ he/him ]</span></h6>
 
-      <div id="lyric-quote-container">
-        <q id="lyric-quote">Some quote</q>
-      </div>
-      <p id="lyric-author">- Some writer</p>
+			<div id="lyric-quote-container">
+				<q id="lyric-quote">Some quote</q>
+			</div>
+			<p id="lyric-author">- Some writer</p>
 
-      <p>
-        I'm a <span id="age-ticker">0</span> year old from
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://en.wikipedia.org/wiki/Wales"
-          >Wales</a
-        >
-        who convinces himself he likes to code.
-      </p>
-      <p>
-        If ever there was a jack-of-all-trades-master-of-none, it's me. I try
-        everything and learn the absolute basics, then get bored and move onto
-        the next thing. Rinse and repeat that, and now I'm here, fiddling around
-        with this website.
-      </p>
-      <p>
-        Some of my past phases include photography and music, neither of which
-        got me anywhere before my lack of attention kicked in and I got booored.
-      </p>
-      <ul>
-        <li>
-          Current hyperfixation:
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://satisfactorygame.com/"
-            >Satisfactory</a
-          >
-        </li>
-        <li>Favourite colour: <span style="color: #d30000">this one</span></li>
-        <li>Hobbies: programming, graphic design, Rubik's cubes</li>
-        <li>
-          Favourite fonts:
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://fonts.google.com/specimen/Space+Grotesk"
-            >Space Grotesk</a
-          >,
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://fonts.google.com/specimen/DM+Mono"
-            >DM Mono</a
-          >
-        </li>
-      </ul>
+			<p>
+				I'm a <span id="age-ticker">0</span> year old from
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://en.wikipedia.org/wiki/Wales"
+					>Wales</a
+				>
+				who convinces himself he likes to code.
+			</p>
+			<p>
+				If ever there was a jack-of-all-trades-master-of-none, it's me. I try
+				everything and learn the absolute basics, then get bored and move onto
+				the next thing. Rinse and repeat that, and now I'm here, fiddling around
+				with this website.
+			</p>
+			<p>
+				Some of my past phases include photography and music, neither of which
+				got me anywhere before my lack of attention kicked in and I got booored.
+			</p>
+			<ul>
+				<li>
+					Current hyperfixation:
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://satisfactorygame.com/"
+						>Satisfactory</a
+					>
+				</li>
+				<li>Favourite colour: <span style="color: #d30000">this one</span></li>
+				<li>Hobbies: programming, graphic design, Rubik's cubes</li>
+				<li>
+					Favourite fonts:
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://fonts.google.com/specimen/Space+Grotesk"
+						>Space Grotesk</a
+					>,
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://fonts.google.com/specimen/DM+Mono"
+						>DM Mono</a
+					>
+				</li>
+			</ul>
 
-      <h2>Projects</h2>
-      <p>
-        I'm an admin and developer at a cosy Discord server called
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://creative-cave.github.io/"
-          >The Creative Cave</a
-        >.
-      </p>
-      <p>
-        I've made several logos & artworks for internet friends - my favourites
-        being the album covers I made for
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://invesvpo.com/"
-          >Invesvpo</a
-        >
-        and
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.youtube.com/@sonnydoggymusic/"
-          >Sonny Doggy</a
-        >.
-      </p>
-      <p>
-        I'm working on a very simple web page builder for absolute beginners
-        called
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/d3ltah/scaffold/"
-          >Scaffold</a
-        >, to teach them (and myself) a few things about HTML and JavaScript.
-      </p>
+			<h2>Projects</h2>
+			<p>
+				I'm an admin and developer at a cosy Discord server called
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://creative-cave.github.io/"
+					>The Creative Cave</a
+				>.
+			</p>
+			<p>
+				I've made several logos & artworks for internet friends - my favourites
+				being the album covers I made for
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://invesvpo.com/"
+					>Invesvpo</a
+				>
+				and
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.youtube.com/@sonnydoggymusic/"
+					>Sonny Doggy</a
+				>.
+			</p>
+			<p>
+				I'm working on a very simple web page builder for absolute beginners
+				called
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://github.com/d3ltah/scaffold/"
+					>Scaffold</a
+				>, to teach them (and myself) a few things about HTML and JavaScript.
+			</p>
+			<p>
+				I also mess around with digital art. I started a while ago, and am
+				trying to pick it back up. You can check it out on my
+				<a target="_blank" rel="noopener noreferrer" href="/gallery">gallery</a>
+				page.
+			</p>
 
-      <h2>Activity</h2>
-      <div id="spotify">
-        <h3><span class="fa-brands fa-spotify"></span> Spotify</h3>
-        <a id="spotify-button">
-          <div id="spotify-container">
-            <div id="spotify-song">
-              <div id="spotify-img-container">
-                <img id="spotify-img" src="./Loading.gif" />
-              </div>
-              <div id="spotify-info">
-                <p id="spotify-title">Song Title</p>
-                <p id="spotify-artist">Song Artist</p>
-                <p id="spotify-album">Song Album</p>
-              </div>
-            </div>
-            <div id="spotify-uts-container">
-              <span
-                class="fa-solid fa-circle-play"
-                id="spotify-live-dot"
-              ></span>
-              <p id="spotify-uts">0 seconds ago</p>
-            </div>
-          </div>
-        </a>
+			<h2>Activity</h2>
+			<div id="spotify">
+				<h3><span class="fa-brands fa-spotify"></span> Spotify</h3>
+				<a id="spotify-button">
+					<div id="spotify-container">
+						<div id="spotify-song">
+							<div id="spotify-img-container">
+								<img id="spotify-img" src="./Loading.gif" />
+							</div>
+							<div id="spotify-info">
+								<p id="spotify-title">Song Title</p>
+								<p id="spotify-artist">Song Artist</p>
+								<p id="spotify-album">Song Album</p>
+							</div>
+						</div>
+						<div id="spotify-uts-container">
+							<span
+								class="fa-solid fa-circle-play"
+								id="spotify-live-dot"
+							></span>
+							<p id="spotify-uts">0 seconds ago</p>
+						</div>
+					</div>
+				</a>
 
-        <h4>Top Artists</h4>
-        <div id="spotify-artists" style="margin-bottom: 3em"></div>
-      </div>
+				<h4>Top Artists</h4>
+				<div id="spotify-artists" style="margin-bottom: 3em"></div>
+			</div>
 
-      <h2>Socials</h2>
-      <p>Ooo, I'm everywhere!</p>
-      <div class="socials-list">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-link"
-          href="https://discord.com/users/410142293610332160"
-        >
-          <i class="fa-brands fa-discord"></i>
-          <p>im.d3</p>
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-link"
-          href="https://steamcommunity.com/id/im-d3/"
-        >
-          <i class="fa-brands fa-steam"></i>
-          <p>im-d3</p>
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-link"
-          href="https://github.com/d3ltah"
-        >
-          <i class="fa-brands fa-github"></i>
-          <p>d3ltah</p>
-        </a>
-      </div>
+			<h2>Socials</h2>
+			<p>Ooo, I'm everywhere!</p>
+			<div class="socials-list">
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					href="https://discord.com/users/410142293610332160"
+				>
+					<i class="fa-brands fa-discord"></i>
+					<p>im.d3</p>
+				</a>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					href="https://steamcommunity.com/id/im-d3/"
+				>
+					<i class="fa-brands fa-steam"></i>
+					<p>im-d3</p>
+				</a>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					href="https://github.com/d3ltah"
+				>
+					<i class="fa-brands fa-github"></i>
+					<p>d3ltah</p>
+				</a>
+			</div>
 
-      <p style="text-align: center; font-size: 0.8em">
-        <i class="fa-solid fa-wand-magic-sparkles"></i> Want a site like this?
-        Feel free to contact me on Discord!
-      </p>
-      <a
-        style="text-decoration: none; width: 60px"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://discord.com/users/410142293610332160"
-      >
-        <p
-          style="
-            text-align: center;
-            background-color: var(--foreground);
-            color: var(--background);
-            width: 60px;
-            margin: 0 auto;
-            padding: 5px 10px;
-            border-radius: 10px;
-          "
-        >
-          im.d3
-        </p>
-      </a>
+			<p style="text-align: center; font-size: 0.8em">
+				<i class="fa-solid fa-wand-magic-sparkles"></i> Want a site like this?
+				Feel free to contact me on Discord!
+			</p>
+			<a
+				style="text-decoration: none; width: 60px"
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://discord.com/users/410142293610332160"
+			>
+				<p
+					style="
+						text-align: center;
+						background-color: var(--foreground);
+						color: var(--background);
+						width: 60px;
+						margin: 0 auto;
+						padding: 5px 10px;
+						border-radius: 10px;
+					"
+				>
+					im.d3
+				</p>
+			</a>
 
-      <p style="text-align: center">
-        Made from scratch using vanilla
-        <i class="fa-solid fa-brands fab fa-js fa-lg"></i>
-        <span style="font-size: 0.3em">(ew)</span>
-      </p>
-    </main>
+			<p style="text-align: center">
+				Made from scratch using vanilla
+				<i class="fa-solid fa-brands fab fa-js fa-lg"></i>
+				<span style="font-size: 0.3em">(ew)</span>
+			</p>
+		</main>
 
-    <script src="./ageAnimation.js"></script>
-    <script src="./titleAnimation.js"></script>
-    <script src="./colourTheme.js"></script>
-    <script src="./activity.js"></script>
-    <script src="./lyrics.js"></script>
-  </body>
+		<script src="./ageAnimation.js"></script>
+		<script src="./titleAnimation.js"></script>
+		<script src="./colourTheme.js"></script>
+		<script src="./activity.js"></script>
+		<script src="./lyrics.js"></script>
+	</body>
 </html>

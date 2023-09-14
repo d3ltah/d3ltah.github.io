@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&family=Space+Grotesk&family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&family=Space+Grotesk&family=Space+Mono&family=DM+Sans&display=swap");
 
 :root {
   --background: #f0f0f0;
@@ -47,7 +47,7 @@
   }
 
   37.5% {
-    color: #ffff00;
+    color: #cccc13;
   }
 
   50% {
@@ -88,7 +88,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "DM Mono", monospace;
+  font-family: "DM Sans", sans-serif;
   color: var(--foreground);
   background-color: var(--background);
   transition: all 0.5s ease;
@@ -144,10 +144,11 @@ p a,
 li a {
   animation: var(--accent);
   text-decoration: none;
-  font-weight: bold;
   white-space: nowrap;
   display: inline-block;
   transition: all 0.2s ease-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 li::marker {
@@ -165,14 +166,17 @@ a:hover {
   cursor: pointer;
 }
 
-p a::before,
-li a::before {
-  content: "{";
-}
-
-p a::after,
-li a::after {
-  content: "}";
+img.emoji {
+  display: inline;
+  border: none;
+  box-shadow: none;
+  height: 1em;
+  width: 1em;
+  margin: 0 0.07em;
+  vertical-align: -0.1em;
+  background: none;
+  padding: 0;
+  pointer-events: none;
 }
 
 .pop-animation {
