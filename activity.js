@@ -15,6 +15,8 @@ function updateSpotifyDisplay() {
         "spotify-img"
       ).src = track.image[3]["#text"];
 
+      document.getElementById("spotify-button").href = track.url;
+
       if (track.name != track.album["#text"]) {
         document.getElementById("spotify-album").innerHTML =
           "on " + track.album["#text"];
