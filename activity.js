@@ -3,115 +3,112 @@ const ArtistsContainer = document.getElementById("spotify-artists");
 const key = "6789c0120d1863a44196d2880b1c39b0";
 
 function updateSpotifyDisplay() {
-  fetch(
-    `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&api_key=${key}&format=json&limit=1&user=bbqbeanburger&extended=1`
-  )
-    .then((response) => response.json())
-    .then((json) => {
-      var track = json.recenttracks.track[0];
-      document.getElementById("spotify-title").innerHTML = track.name;
-      document.getElementById("spotify-artist").innerHTML = track.artist.name;
-      document.getElementById(
-        "spotify-img"
-      ).src = track.image[3]["#text"];
+	fetch(
+		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&api_key=${key}&format=json&limit=1&user=bbqbeanburger&extended=1`
+	)
+		.then((response) => response.json())
+		.then((json) => {
+			var track = json.recenttracks.track[0];
+			document.getElementById("spotify-title").innerHTML = track.name;
+			document.getElementById("spotify-artist").innerHTML = track.artist.name;
+			document.getElementById("spotify-img").src = track.image[3]["#text"];
 
-      document.getElementById("spotify-button").href = track.url;
+			document.getElementById("spotify-button").href = track.url;
 
-      if (track.name != track.album["#text"]) {
-        document.getElementById("spotify-album").innerHTML =
-          "on " + track.album["#text"];
-        document.getElementById("spotify-album").style.width = "100%";
-        document.getElementById("spotify-album").style.height = "1em";
-      } else {
-        document.getElementById("spotify-album").style.width = "0";
-        document.getElementById("spotify-album").style.height = "0";
-      }
+			if (track.name != track.album["#text"]) {
+				document.getElementById("spotify-album").innerHTML =
+					"on " + track.album["#text"];
+				document.getElementById("spotify-album").style.width = "100%";
+				document.getElementById("spotify-album").style.height = "1em";
+			} else {
+				document.getElementById("spotify-album").style.width = "0";
+				document.getElementById("spotify-album").style.height = "0";
+			}
 
-      let nowPlaying = track["@attr"]
-        ? track["@attr"].nowplaying === "true"
-        : false;
+			let nowPlaying = track["@attr"]
+				? track["@attr"].nowplaying === "true"
+				: false;
 
-      if (nowPlaying == true) {
-        document.documentElement.style.setProperty(
-          "--spotify-live-dot-size",
-          1
-        );
-        document.getElementById("spotify-uts").innerHTML = "Now Playing";
-      } else {
-        document.documentElement.style.setProperty(
-          "--spotify-live-dot-size",
-          0
-        );
-        document.getElementById("spotify-uts").innerHTML =
-          timeSince(track.date.uts * 1000) + " ago";
-      }
-    });
+			if (nowPlaying == true) {
+				document.documentElement.style.setProperty(
+					"--spotify-live-dot-size",
+					1
+				);
+				document.getElementById("spotify-uts").innerHTML = "Now Playing";
+			} else {
+				document.documentElement.style.setProperty(
+					"--spotify-live-dot-size",
+					0
+				);
+				document.getElementById("spotify-uts").innerHTML =
+					timeSince(track.date.uts * 1000) + " ago";
+			}
+		});
 }
 
 function updateTopArtists() {
-  var artists = [];
-  fetch(
-    `https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=bbqbeanburger&api_key=${key}&format=json&limit=7`
-  )
-    .then((response) => response.json())
-    .then((json) => {
-      for (var i = 0; i < json.topartists.artist.length; i++) {
-        var artistElement = document.createElement("p");
-        artistElement.innerHTML = json.topartists.artist[i].name;
-        ArtistsContainer.appendChild(artistElement);
-      }
-        
-    });
+	var artists = [];
+	fetch(
+		`https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=bbqbeanburger&api_key=${key}&format=json&limit=7`
+	)
+		.then((response) => response.json())
+		.then((json) => {
+			for (var i = 0; i < json.topartists.artist.length; i++) {
+				var artistElement = document.createElement("p");
+				artistElement.innerHTML = json.topartists.artist[i].name;
+				ArtistsContainer.appendChild(artistElement);
+			}
+		});
 }
 
 var timeSince = function (date) {
-  if (typeof date !== "object") {
-    date = new Date(date);
-  }
+	if (typeof date !== "object") {
+		date = new Date(date);
+	}
 
-  var seconds = Math.floor((new Date() - date) / 1000);
-  var intervalType;
+	var seconds = Math.floor((new Date() - date) / 1000);
+	var intervalType;
 
-  var interval = Math.floor(seconds / 31536000);
-  if (interval >= 1) {
-    intervalType = "year";
-  } else {
-    interval = Math.floor(seconds / 2592000);
-    if (interval >= 1) {
-      intervalType = "month";
-    } else {
-      interval = Math.floor(seconds / 86400);
-      if (interval >= 1) {
-        intervalType = "day";
-      } else {
-        interval = Math.floor(seconds / 3600);
-        if (interval >= 1) {
-          intervalType = "hour";
-        } else {
-          interval = Math.floor(seconds / 60);
-          if (interval >= 1) {
-            intervalType = "minute";
-          } else {
-            interval = seconds;
-            intervalType = "second";
-          }
-        }
-      }
-    }
-  }
+	var interval = Math.floor(seconds / 31536000);
+	if (interval >= 1) {
+		intervalType = "year";
+	} else {
+		interval = Math.floor(seconds / 2592000);
+		if (interval >= 1) {
+			intervalType = "month";
+		} else {
+			interval = Math.floor(seconds / 86400);
+			if (interval >= 1) {
+				intervalType = "day";
+			} else {
+				interval = Math.floor(seconds / 3600);
+				if (interval >= 1) {
+					intervalType = "hour";
+				} else {
+					interval = Math.floor(seconds / 60);
+					if (interval >= 1) {
+						intervalType = "minute";
+					} else {
+						interval = seconds;
+						intervalType = "second";
+					}
+				}
+			}
+		}
+	}
 
-  if (interval > 1 || interval === 0) {
-    intervalType += "s";
-  }
+	if (interval > 1 || interval === 0) {
+		intervalType += "s";
+	}
 
-  if (
-    interval < 10 &&
-    (intervalType == "second" || intervalType == "seconds")
-  ) {
-    return "Just now";
-  }
+	if (
+		interval < 10 &&
+		(intervalType == "second" || intervalType == "seconds")
+	) {
+		return "Just now";
+	}
 
-  return interval + " " + intervalType;
+	return interval + " " + intervalType;
 };
 
 updateSpotifyDisplay();

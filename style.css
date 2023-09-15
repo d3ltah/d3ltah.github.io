@@ -1,449 +1,450 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&family=Space+Grotesk&family=Space+Mono&family=DM+Sans&display=swap");
 
 :root {
-  --background: #f0f0f0;
-  --foreground: #0f0f0f;
-  --accent: default-accent 7s linear infinite;
-  --spotify-live-dot-size: 0.8em;
+	--background: #f0f0f0;
+	--foreground: #0f0f0f;
+	--accent: default-accent 7s linear infinite;
+	--spotify-live-dot-size: 0.8em;
 }
 
 @keyframes slide-in {
-  0% {
-    transform: translateY(-15px);
-    opacity: 0;
-  }
+	0% {
+		transform: translateY(-15px);
+		opacity: 0;
+	}
 
-  30% {
-    opacity: 0.5;
-    transform: translateY(5px);
-  }
+	30% {
+		opacity: 0.5;
+		transform: translateY(5px);
+	}
 
-  50% {
-    transform: translateY(0);
-  }
+	50% {
+		transform: translateY(0);
+	}
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(0.9);
-  }
+	0% {
+		transform: scale(0.9);
+	}
 
-  50% {
-    transform: scale(1.1);
-  }
+	50% {
+		transform: scale(1.1);
+	}
 
-  100% {
-    transform: scale(0.9);
-  }
+	100% {
+		transform: scale(0.9);
+	}
 }
 
 @keyframes rainbow-accent {
-  0% {
-    color: #d30000;
-  }
+	0% {
+		color: #d30000;
+	}
 
-  25% {
-    color: #ffa500;
-  }
+	25% {
+		color: #ffa500;
+	}
 
-  37.5% {
-    color: #cccc13;
-  }
+	37.5% {
+		color: #cccc13;
+	}
 
-  50% {
-    color: #7fff00;
-  }
+	50% {
+		color: #7fff00;
+	}
 
-  62.5% {
-    color: #00ffff;
-  }
+	62.5% {
+		color: #00ffff;
+	}
 
-  75% {
-    color: #0000ff;
-  }
+	75% {
+		color: #0000ff;
+	}
 
-  87.5% {
-    color: #9932cc;
-  }
+	87.5% {
+		color: #9932cc;
+	}
 
-  100% {
-    color: #d30000;
-  }
+	100% {
+		color: #d30000;
+	}
 }
 
 @keyframes default-accent {
-  from {
-    color: #d30000;
-  }
+	from {
+		color: #d30000;
+	}
 
-  to {
-    color: #d30000;
-  }
+	to {
+		color: #d30000;
+	}
 }
 
 html {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
 body {
-  margin: 0;
-  font-family: "DM Sans", sans-serif;
-  color: var(--foreground);
-  background-color: var(--background);
-  transition: all 0.5s ease;
-  animation: slide-in 1s ease-out;
-  user-select: none;
+	margin: 0;
+	font-family: "DM Sans", sans-serif;
+	color: var(--foreground);
+	background-color: var(--background);
+	transition: all 0.5s ease;
+	animation: slide-in 1s ease-out;
+	user-select: none;
 }
 
 main {
-  max-width: 800px;
-  margin: 0 auto;
-  margin-top: 60px;
-  padding: 40px;
-  transition: all 0.3s ease-out;
+	max-width: 800px;
+	margin: 0 auto;
+	margin-top: 60px;
+	padding: 40px;
+	transition: all 0.3s ease-out;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Space Grotesk", sans-serif;
+	font-family: "Space Grotesk", sans-serif;
 }
 
 h6 {
-  opacity: 1;
+	opacity: 1;
 }
 
 h6 a {
-  animation: var(--accent);
-  text-decoration: none;
-  font-weight: bold;
+	animation: var(--accent);
+	text-decoration: none;
+	font-weight: bold;
 }
 
 h1 {
-  font-size: min(4vw, 60px);
-  height: 1em;
-  margin-bottom: 15px;
-  transition: font-size 0.5s ease-out;
-  vertical-align: bottom;
-  line-height: 1.2em;
+	font-size: min(4vw, 60px);
+	height: 1em;
+	margin-bottom: 15px;
+	transition: font-size 0.5s ease-out;
+	vertical-align: bottom;
+	line-height: 1.2em;
 }
 
 h2 {
-  height: 28px;
-  text-align: right;
+	height: 28px;
+	text-align: right;
 }
 
 h2::before {
-  content: ">> ";
-  animation: var(--accent);
-  margin-right: 6px;
+	content: ">> ";
+	animation: var(--accent);
+	margin-right: 6px;
 }
 
 p a,
 li a {
-  animation: var(--accent);
-  text-decoration: none;
-  white-space: nowrap;
-  display: inline-block;
-  transition: all 0.2s ease-out;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+	animation: var(--accent);
+	text-decoration: none;
+	white-space: nowrap;
+	display: inline-block;
+	transition: all 0.2s ease-out;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
 li::marker {
-  animation: var(--accent);
+	animation: var(--accent);
 }
 
 ul,
 ol {
-  margin: 20px 0;
+	margin: 20px 0;
 }
 
 a:hover {
-  color: var(--background);
-  background-color: var(--foreground);
-  cursor: pointer;
+	color: var(--background);
+	background-color: var(--foreground);
+	cursor: pointer;
 }
 
 img.emoji {
-  display: inline;
-  border: none;
-  box-shadow: none;
-  height: 1em;
-  width: 1em;
-  margin: 0 0.07em;
-  vertical-align: -0.1em;
-  background: none;
-  padding: 0;
-  pointer-events: none;
+	display: inline;
+	border: none;
+	box-shadow: none;
+	height: 1em;
+	width: 1em;
+	margin: 0 0.07em;
+	vertical-align: -0.1em;
+	background: none;
+	padding: 0;
+	pointer-events: none;
 }
 
 .pop-animation {
-  animation: slide-in 1s ease-out;
+	animation: slide-in 1s ease-out;
 }
 
 .socials-list {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 .social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  font-weight: bold;
-  font-family: "Space Grotesk", sans-serif;
-  color: var(--foreground);
-  transition: background-color 0.2s ease-out;
-  text-decoration: none;
-  border-radius: 10px;
-  margin: 0 0.5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+	font-weight: bold;
+	font-family: "Space Grotesk", sans-serif;
+	color: var(--foreground);
+	transition: background-color 0.2s ease-out;
+	text-decoration: none;
+	border-radius: 10px;
+	margin: 0 0.5em;
 }
 
 .social-link:hover {
-  background-color: var(--foreground);
-  color: var(--background);
+	background-color: var(--foreground);
+	color: var(--background);
 }
 
 .social-link i {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 .name-letter {
-  display: inline-block;
-  height: 1em;
+	display: inline-block;
+	height: 1em;
 }
 
 #logo {
-  fill: var(--foreground);
+	fill: var(--foreground);
 }
 
 #discord-link:hover {
-  background-color: #5865f2;
+	background-color: #5865f2;
 }
 
 #steam-link:hover {
-  background-color: #00adee;
+	background-color: #00adee;
 }
 
 #github-link:hover {
-  background-color: #4078c0;
+	background-color: #4078c0;
 }
 
 #theme-toggle:hover ~ #theme-toggle-note {
-  transform: translateX(0);
-  opacity: 1;
+	transform: translateX(0);
+	opacity: 1;
 }
 
 #theme-toggle {
-  color: var(--foreground);
-  cursor: pointer;
-  transition: all 0.1s ease-out;
-  transition-property: scale, color;
+	color: var(--foreground);
+	cursor: pointer;
+	transition: all 0.1s ease-out;
+	transition-property: scale, color;
 }
 
 #theme-toggle:hover {
-  animation: var(--accent);
-  background-color: transparent;
-  transform: scale(1.1);
+	animation: var(--accent);
+	background-color: transparent;
+	transform: scale(1.1);
 }
 
 #theme-toggle:active {
-  transform: scale(0.99);
+	transform: scale(0.99);
 }
 
 #theme-toggle-section {
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
 }
 
 #theme-toggle-note {
-  transform: translateX(5px);
-  opacity: 0;
-  margin: 10px;
-  transition: all 0.2s ease-out;
+	transform: translateX(5px);
+	opacity: 0;
+	margin: 10px;
+	transition: all 0.2s ease-out;
 }
 
 #name-cycle {
-  display: inline-block;
-  white-space: nowrap;
-  font-family: "Space Mono", monospace;
-  animation: var(--accent);
+	display: inline-block;
+	white-space: nowrap;
+	font-family: "Space Mono", monospace;
+	animation: var(--accent);
 }
 
 #pronouns {
-  margin-top: 0;
-  opacity: 0.5;
+	margin-top: 0;
+	opacity: 0.5;
 }
 
 #logo-button {
-  width: 60px;
-  transition: transform 0.1s ease-out;
+	width: 60px;
+	transition: transform 0.1s ease-out;
 }
 
 #logo-button:hover {
-  transform: scale(1.1);
-  background-color: transparent;
+	transform: scale(1.1);
+	background-color: transparent;
 }
 
 #logo-button:active {
-  transform: scale(0.9);
+	transform: scale(0.9);
 }
 
 #spotify-container {
-  display: inline-flex;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: space-between;
-  height: 110px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: var(--foreground);
-  flex-wrap: wrap;
-  line-height: 1.2;
-  overflow: hidden;
-  border-radius: 15px;
-  padding: 10px;
+	display: inline-flex;
+	box-sizing: border-box;
+	align-items: center;
+	justify-content: space-between;
+	height: 110px;
+	width: 100%;
+	margin: 0 auto;
+	background-color: var(--foreground);
+	flex-wrap: wrap;
+	line-height: 1.2;
+	overflow: hidden;
+	border-radius: 15px;
+	padding: 10px;
 }
 
 #spotify-button {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  transition: all 0.2s ease-out;
-  text-decoration: none;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	transition: all 0.2s ease-out;
+	text-decoration: none;
 }
 
 #spotify-button:hover {
-  background-color: inherit;
-  color: inherit;
-  transform: scale(1.01);
+	background-color: inherit;
+	color: inherit;
+	transform: scale(1.01);
 }
 
 #spotify-song {
-  display: flex;
+	display: flex;
 }
 
 #spotify-container p {
-  margin: 2px;
-  color: var(--background);
+	margin: 2px;
+	color: var(--background);
 }
 
 #spotify-title {
-  font-weight: bold;
-  font-size: 1.2em;
-  animation: var(--accent);
-  text-overflow: clip;
-  width: 100%;
+	font-weight: bold;
+	font-size: 1.2em;
+	animation: var(--accent);
+	text-overflow: clip;
+	width: 100%;
 }
 
 #spotify-artist {
-  font-family: "Space Grotesk", sans-serif;
+	font-family: "Space Grotesk", sans-serif;
 }
 
 #spotify-album {
-  font-size: 0.6em;
-  font-style: italic;
-  opacity: 0.5;
-  width: 0;
-  transition: all 0.5s ease-out;
-  overflow: hidden;
-  white-space: nowrap;
+	font-size: 0.6em;
+	font-style: italic;
+	opacity: 0.5;
+	width: 0;
+	transition: all 0.5s ease-out;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 #spotify-img-container {
-  width: 90px;
-  margin-right: 15px;
+	width: 90px;
+	margin-right: 15px;
 }
 
 #spotify-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: all 1s ease-in-out;
-  align-self: center;
-  overflow: hidden;
-  border-radius: 5px;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: all 1s ease-in-out;
+	align-self: center;
+	overflow: hidden;
+	border-radius: 5px;
 }
 
 #spotify-uts-container {
-  align-self: flex-start;
-  height: 1em;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  margin-top: 10px;
-  margin-right: 10px;
+	align-self: flex-start;
+	height: 1em;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	margin-top: 10px;
+	margin-right: 10px;
 }
 
 #spotify-uts {
-  line-height: 1;
-  font-family: "Space Grotesk", sans-serif;
-  white-space: nowrap;
+	line-height: 1;
+	font-family: "Space Grotesk", sans-serif;
+	white-space: nowrap;
 }
 
 #spotify-info {
-  align-self: center;
+	align-self: center;
 }
 
 #spotify-live-dot {
-  height: 0.8em;
-  animation: pulse 1s infinite;
-  align-self: baseline;
+	height: 0.8em;
+	animation: pulse 1s infinite;
+	align-self: baseline;
 }
 
 #spotify-live-dot::before {
-  transform: scale(var(--spotify-live-dot-size));
-  transition: transform 0.5s ease-in-out;
-  animation: var(--accent);
-  margin-right: 3px;
-  display: block;
+	transform: scale(var(--spotify-live-dot-size));
+	transition: transform 0.5s ease-in-out;
+	animation: var(--accent);
+	margin-right: 3px;
+	display: block;
 }
 
 #spotify-artists {
-  font-family: "Space Grotesk", sans-serif;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: stretch;
+	font-family: "Space Grotesk", sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: stretch;
 }
 
 #spotify-artists p {
-  margin: 5px;
-  flex-grow: 1;
-  text-align: center;
-  width: fit-content;
-  white-space: nowrap;
-  background-color: var(--foreground);
-  color: var(--background);
-  padding: 10px;
-  margin: 3px;
-  border-radius: 10px;
-  transition: all 0.2s ease-out;
+	margin: 5px;
+	flex-grow: 1;
+	text-align: center;
+	width: fit-content;
+	white-space: nowrap;
+	background-color: var(--foreground);
+	color: var(--background);
+	padding: 10px;
+	margin: 3px;
+	border-radius: 10px;
+	transition: all 0.2s ease-out;
 }
 
 #lyric-quote-container {
-  font-style: italic;
-  opacity: 0.5;
-  height: inherit;
-  display: flex;
-  border-left: 2px solid var(--foreground);
-  padding-left: 15px;
+	font-style: italic;
+	opacity: 0.5;
+	height: inherit;
+	display: flex;
+	border-left: 2px solid var(--foreground);
+	padding-left: 15px;
+  border-radius: 3px;
 }
 
 #lyric-author {
-  font-style: italic;
-  opacity: 0.5;
-  margin-bottom: 1.5em;
-  margin-left: 2em;
+	font-style: italic;
+	opacity: 0.5;
+	margin-bottom: 1.5em;
+	margin-left: 2em;
 }
 
 #lyric-quote::before,
 #lyric-quote::after {
-  content: "";
+	content: "";
 }
