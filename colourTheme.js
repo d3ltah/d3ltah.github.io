@@ -5,7 +5,7 @@ var switchCount = 0;
 var rainbowMode = false;
 
 function toggleThemeCookie() {
-	if (window.localStorage.getItem("theme") == "light") {
+	if (window.localStorage.getItem("theme") == "light" || !window.localStorage.getItem("theme")) {
 		window.localStorage.setItem("theme", "dark");
 	} else {
 		window.localStorage.setItem("theme", "light");
