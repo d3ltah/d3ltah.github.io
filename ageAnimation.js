@@ -5,12 +5,13 @@ var month_diff = Date.now() - dob.getTime();
 var age_dt = new Date(month_diff);
 var year = age_dt.getUTCFullYear();
 const Age = Math.abs(year - 1970);
+// Age = 100;
 
 AgeTicker.innerHTML = Age;
+// AgeTicker.innerHTML = "100";
 
 setTimeout(() => {
     for (let i = 0; i <= Age; i++) {
         setTimeout(() => {AgeTicker.innerHTML = i}, 40 * i);
     }
 }, 300);
-    
