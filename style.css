@@ -8,11 +8,59 @@
     src: url("fonts/EBGaramond-Italic.ttf") format("truetype-variations");
 }
 
-h1 {
+html {
+    background-color: #f0f0f0;
+    color: #272727;
     font-family: "EB Garamond", serif;
-    font-variation-settings: "wght" 700;
 }
 
-i {
+h1 {
+    font-weight: 500;
+}
+
+h2 {
     font-family: "EB Garamond Italic", serif;
+    opacity: 0.5;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+a {
+    opacity: 0.5;
+    font-family: "EB Garamond Italic", serif;
+    font-style: italic;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease-out; 
+}
+
+a:hover {
+    opacity: 1;
+    text-shadow: 0.5px 0 0 currentColor;
+}
+
+#name {
+    font-weight: 800;
+}
+
+#top-bar {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    height: 75px;
+    -webkit-user-drag: none;
+    pointer-events: none;
+    user-select: none;
 }
