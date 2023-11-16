@@ -4,11 +4,6 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>D3</title>
-		<link rel="stylesheet" href="style.css" />
-
-		<link
-		href=”https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap”
-		rel=”stylesheet”>
 
 		<link
 			rel="stylesheet"
@@ -17,111 +12,144 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
+		<link rel="stylesheet" href="style.css" />
 	</head>
 
-	<body>
+	<body class="uncut-sans" oncontextmenu="event.preventDefault();">
 		<main>
+			<div id="user-cursor"></div>
 			<div id="top-bar">
-				<img src="media/cham-logo-black.png" id="logo" />
+				<div id="logo-container">
+					<svg id="logo-svg" viewBox="0 0 67.733335 67.733344">
+						<g id="layer1" transform="translate(324.783,-50.597678)">
+							<path
+								id="logo-path"
+								style="fill-opacity: 1; stroke-width: 64.0002"
+								d="m -291.32091,50.597681 17.54057,16.934101 -9.17563,8.857213 -7.96037,7.684788 -7.96037,-7.684788 -9.17486,-8.857984 h -16.73144 l 17.54056,16.934094 -17.54056,16.932585 h 16.73144 l 9.17486,-8.857241 7.96037,-7.684787 7.96037,7.684787 9.17563,8.857241 -17.54057,16.93332 h 16.73144 l 9.17486,-8.85723 8.36494,-8.07609 -8.36494,-8.075354 -9.17565,-8.857996 9.17485,-8.857218 8.36493,-8.07534 -8.36493,-8.075345 -9.17563,-8.858756 z"
+							/>
+						</g>
+					</svg>
+				</div>
+				<h1 id="title" class="space-grotesk">hey, i'm <span>D3</span>.</h1>
 			</div>
 
-			<h1>hello, i'm <span id="name">D3</span></h1>
-			<p>
-				I'm a <span id="age"></span> year old nerd & tech enthusiast from Wales
-				with an obsession with computers and an aversion to touching grass.
-			</p>
+			<section>
+				<h3 class="comment-subheader"># about</h3>
+				<p>
+					i'm a <span id="age">00.00000000</span> year old nerd from wales with
+					an obsession with computers and an aversion to touching grass.
+				</p>
+			</section>
 
-			<h2>programming</h2>
-			<p>
-				I've been learning to code since I was about 9 years old, and since then
-				I've toyed with a range of projects to try and sharpen my skills. Am I
-				skillful? Probably not, but at least I'm passionate. At least, that's
-				what I tell myself when I get the nineteenth missing semi-colon error in
-				11 minutes.
-			</p>
+			<section>
+				<h3 class="comment-subheader"># programming</h3>
+				<p>
+					i've been learning to code since the age of 9(ish) and have gotten
+					only marginally better since then.
+				</p>
+			</section>
 
-			<h2>design</h2>
-			<p>
-				As well as programming, I also have a passion for design, playing around
-				with graphic design for almost as long. Since discovering the
-				open-source godsend that is Inkscape, I've created logos for Discord
-				servers, album covers for internet friend musicians and about a million
-				logos for myself.
-			</p>
-
-			<h2>writing</h2>
-			<p>
-				I'm trying to into writing, too. When I was younger, I used to love
-				writing and, not to toot my own horn, I wasn't that bad. Now though, I
-				absolutely suck and am trying to get back into it, just because it's an
-				awesome outlet for emotions and thoughts.
-			</p>
-
-			<h2>projects</h2>
-			<p>
-				I'm an admin and developer for a cosy little Discord server called the
-				<a
-					target="_blank"
-					rel="noopener noreferrer"
-					href="https://creative-cave.github.io/"
-				>
-					Creative Cave</a
-				>
-				with just over 100 members.
-			</p>
-			<p>
-				I'm currently trying to write a book called Trustless which is part
-				writing practice, part vent about life and my experiences with people.
-			</p>
-
-			<h2><i class="fa-solid fa-hand-holding-heart"></i> awareness</h2>
-			<p>
-				Please check out the following links for charities and resources about
-				things that have affected myself and people I know. It helps a lot
-				<i class="fa-regular fa-heart"></i>
-			</p>
-			<ul>
-				<li>
+			<section>
+				<h3 class="comment-subheader"># design</h3>
+				<p>
+					this webpage is the peak of my design ability, the cursor being the
+					first thing i've been proud of for months. aside from fancy cursors, i
+					use
 					<a
+						href="https://inkscape.org/"
 						target="_blank"
 						rel="noopener noreferrer"
-						href="https://www.mind.org.uk/"
-					>
-						Mind
-					</a>
-				</li>
-				<li>
+						class="anchor"
+						>inkscape</a
+					> to design nothing in particular.
+				</p>
+				<p>
+					(p.s: i definitely didn't steal the cursor idea from
 					<a
+						href="https://design.google/"
 						target="_blank"
 						rel="noopener noreferrer"
-						href="https://www.ehlers-danlos.com/"
-					>
-						The Ehlers-Danlos Society
-					</a>
-				</li>
-				<li>
+						class="anchor"
+						>google</a
+					>)
+				</p>
+			</section>
+
+			<section>
+				<h3 class="comment-subheader"># socials</h3>
+				<div id="socials">
 					<a
+						href="https://discord.com/users/410142293610332160/"
 						target="_blank"
 						rel="noopener noreferrer"
-						href="https://www.bipolaruk.org/"
+						class="social-button"
 					>
-						Bipolar UK
+						<i class="fa-brands fa-discord"></i>
+						<p>discord</p>
 					</a>
-				</li>
-				<li>
+
 					<a
+						href="https://github.com/d3ltah"
 						target="_blank"
 						rel="noopener noreferrer"
-						href="https://www.alzheimers.org.uk/"
+						class="social-button"
 					>
-						Alzheimer's Society
+						<i class="fa-brands fa-github"></i>
+						<p>github</p>
 					</a>
-				</li>
-			</ul>
+
+					<a
+						href="https://steamcommunity.com/id/im-d3/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="social-button"
+					>
+						<i class="fa-brands fa-steam"></i>
+						<p>steam</p>
+					</a>
+				</div>
+			</section>
+
+			<section>
+				<h3 class="comment-subheader"># fonts</h3>
+				<ul id="fonts-list">
+					<a
+						href="https://uncut.wtf/sans-serif/uncut-sans/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="uncut-sans"
+						id="uncut-sans-b"
+					>
+						<li>uncut sans</li>
+					</a>
+					<a
+						href="https://fonts.google.com/specimen/Space+Grotesk"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="space-grotesk"
+						id="space-grotesk-b"
+					>
+						<li style="font-family: 'Space Grotesk', sans-serif">
+							space grotesk
+						</li>
+					</a>
+					<a
+						href="https://fonts.google.com/specimen/Red+Hat+Mono"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="red-hat-mono"
+						id="red-hat-mono-b"
+					>
+						<li style="font-family: 'Red Hat Mono', sans-serif">
+							red hat mono
+						</li>
+					</a>
+				</ul>
+			</section>
 		</main>
+
+		<script src="script.js"></script>
+		<script src="cursor.js"></script>
 	</body>
-
-	<script src="script.js"></script>
 </html>
-
-<!-- <img src="media/cham-logo-black.png" id="logo"> -->

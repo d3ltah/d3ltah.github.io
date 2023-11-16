@@ -1,67 +1,198 @@
-@font-face {
-    font-family: "EB Garamond";
-    src: url("fonts/EBGaramond.ttf") format("truetype-variations");
+:root {
+	--uncut-ffs: "ss01", "ss02", "ss04", "ss05", "tnum", "zero";
+
+	--light: #f0f0f0;
+	--dark: #0f0f0f;
+	--red: #d30000;
+	--green: #00d300;
+	--blue: #0000d3;
+
+	--cursor-x: 0;
+	--cursor-y: 0;
 }
 
 @font-face {
-    font-family: "EB Garamond Italic";
-    src: url("fonts/EBGaramond-Italic.ttf") format("truetype-variations");
+	font-family: "Space Grotesk";
+	src: url("./fonts/SpaceGrotesk-Variable.ttf") format("truetype-variations");
+}
+
+@font-face {
+	font-family: "Uncut Sans";
+	src: url("./fonts/UncutSans-Variable.ttf") format("truetype-variations");
+}
+
+@font-face {
+	font-family: "Onest";
+	src: url("./fonts/Onest-Variable.ttf") format("truetype-variations");
+}
+
+@font-face {
+	font-family: "Red Hat Mono";
+	src: url("./fonts/RedHatMono-Variable.ttf") format("truetype-variations");
+}
+
+.space-grotesk {
+	font-family: "Space Grotesk", sans-serif;
+}
+
+.uncut-sans {
+	font-family: "Uncut Sans", sans-serif;
+	-webkit-font-feature-settings: var(--uncut-ffs);
+	-moz-font-feature-settings: var(--uncut-ffs);
+	-ms-font-feature-settings: var(--uncut-ffs);
+	font-feature-settings: var(--uncut-ffs);
+}
+
+.red-hat-mono {
+	font-family: "Red Hat Mono", monospace;
+}
+
+.comment-subheader {
+	font-family: "Red Hat Mono", monospace;
+	font-size: 1em;
+	color: var(--red);
+	font-weight: 500;
+}
+
+.social-button {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background-color: var(--dark);
+	color: var(--light);
+	padding: 8px 15px;
+	transition: all 0.1s ease;
+}
+
+.social-button:hover {
+	color: var(--dark);
+	background-color: var(--light);
+}
+
+.anchor {
+	opacity: 0.5;
+	transition: all 0.1s ease;
+}
+
+.anchor:hover {
+	opacity: 1;
 }
 
 html {
-    background-color: #f0f0f0;
-    color: #0f0f0f;
-    font-family: "EB Garamond", serif;
-}
-
-h1 {
-    font-family: "EB Garamond Italic", serif;
-    font-weight: 500;
-}
-
-h2 {
-    font-family: "EB Garamond Italic", serif;
-    opacity: 0.5;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	-webkit-font-smoothing: subpixel-antialiased;
+	cursor: none;
 }
 
 body {
-    margin: 0;
+	font-family: "Uncut Sans", sans-serif;
+	background-color: var(--dark);
+	font-size: 1.4em;
+	font-weight: 300;
+	color: var(--light);
+	margin: 0;
+	cursor: none;
+	overflow-x: clip;
+	user-select: none;
 }
 
 main {
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 200px;
+	width: min(800px, 60vw);
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+section {
+	margin: 50px 0;
+}
+
+h1 {
+	color: var(--light);
+	font-size: 3rem;
+	margin: 20px;
+}
+
+p {
+	margin: 0.5em 0;
 }
 
 a {
-    opacity: 0.5;
-    font-family: "EB Garamond Italic", serif;
-    font-style: italic;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.2s ease-out; 
+	color: inherit;
+	text-decoration: none;
+	cursor: none;
 }
 
-a:hover {
-    opacity: 1;
-    text-shadow: 0.5px 0 0 currentColor;
+ul {
+	margin: 0;
 }
 
-#name {
-    font-weight: 800;
+li::marker {
+	content: "→";
+	font-weight: 500;
+	font-family: "Uncut Sans", sans-serif;
+}
+
+li {
+	padding-left: 10px;
+}
+
+#title {
+	font-weight: 100;
+}
+
+#title span {
+	font-family: "Space Grotesk", sans-serif;
+	font-weight: 500;
+}
+
+#user-cursor {
+	position: absolute;
+	top: var(--cursor-y);
+	left: var(--cursor-x);
+	transform: translate(-50%, -50%);
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+	background-color: #fff;
+	border: 0 solid white;
+	mix-blend-mode: difference;
+	pointer-events: none;
+	overscroll-behavior: none;
+	transition: top 0.07s ease, left 0.07s ease, transform 0.1s ease,
+		border 0.1s ease, background-color 0.1s ease;
 }
 
 #top-bar {
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-#logo {
-    height: 75px;
-    -webkit-user-drag: none;
-    pointer-events: none;
-    user-select: none;
+#logo-svg {
+	width: 70px;
+	background-color: var(--light);
+	padding: 50px;
+}
+
+#logo-path {
+	fill: var(--dark);
+	margin: 100px;
+}
+
+#fonts-list li {
+	transition: font-weight 0.1s ease;
+	width: fit-content;
+}
+
+#fonts-list li:hover {
+	font-weight: 700;
+}
+
+#socials {
+	display: flex;
+	flex-wrap: wrap;
 }
