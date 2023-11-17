@@ -7,22 +7,7 @@ document.onmousemove = (e) => {
     cursorX = e.clientX;
     cursorY = e.clientY;
 
-    console.log(cursor.offsetHeight);
-
-    document.documentElement.style.setProperty("--cursor-x", cursorX + "px");
-    document.documentElement.style.setProperty("--cursor-y", cursorY + "px");
-
-    // do not move the cursor further down if it will cause the cursor to go off the screen
-    if (
-        (cursorY + cursor.offsetHeight > window.innerHeight) ||
-        (cursorY < cursor.offsetHeight) ||
-        (cursorX + cursor.offsetWidth > window.innerWidth) ||
-        (cursorX < cursor.offsetWidth)
-        ) {
-        cursor.style.transform = "translate(-50%, -50%) scale(0)";
-    } else {
-        cursor.style.transform = "translate(-50%, -50%) scale(1)";
-    }
+    requestAnimationFrame(updateCursor);
 }
 
 document.onscroll = () => {
@@ -59,4 +44,23 @@ document.onmouseup = (e) => {
     cursor.style.transform = "translate(-50%, -50%) scale(1)";
     cursor.style.backgroundColor = "";
     cursor.style.border = "";
+}
+
+function updateCursor() {
+    console.log(cursor.offsetHeight);
+
+    document.documentElement.style.setProperty("--cursor-x", cursorX + "px");
+    document.documentElement.style.setProperty("--cursor-y", cursorY + "px");
+
+    // do not move the cursor further down if it will cause the cursor to go off the screen
+    if (
+        (cursorY + cursor.offsetHeight > window.innerHeight) ||
+        (cursorY < cursor.offsetHeight) ||
+        (cursorX + cursor.offsetWidth > window.innerWidth) ||
+        (cursorX < cursor.offsetWidth)
+        ) {
+        cursor.style.transform = "translate(-50%, -50%) scale(0)";
+    } else {
+        cursor.style.transform = "translate(-50%, -50%) scale(1)";
+    }
 }

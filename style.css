@@ -161,6 +161,9 @@ li {
 	mix-blend-mode: difference;
 	pointer-events: none;
 	overscroll-behavior: none;
+	will-change: transform, top, left, border, background-color;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 	transition: top 0.07s ease, left 0.07s ease, transform 0.1s ease,
 		border 0.1s ease, background-color 0.1s ease;
 }
