@@ -49,8 +49,8 @@ document.onmouseup = (e) => {
 function updateCursor() {
     console.log(cursor.offsetHeight);
 
-    document.documentElement.style.setProperty("--cursor-x", cursorX + "px");
-    document.documentElement.style.setProperty("--cursor-y", cursorY + "px");
+    document.documentElement.style.setProperty("--cursor-x", cursorX + window.scrollX + "px");
+    document.documentElement.style.setProperty("--cursor-y", cursorY + window.scrollY + "px");
 
     // do not move the cursor further down if it will cause the cursor to go off the screen
     if (
