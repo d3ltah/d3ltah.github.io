@@ -59,8 +59,10 @@ function updateCursor() {
         (cursorX + cursor.offsetWidth > window.innerWidth) ||
         (cursorX < cursor.offsetWidth)
         ) {
-        cursor.style.transform = "translate(-50%, -50%) scale(0)";
+        cursor.style.height = "0px";
+        cursor.style.width = "0px";
     } else {
-        cursor.style.transform = "translate(-50%, -50%) scale(1)";
+        cursor.style.height = "";
+        cursor.style.width = "";
     }
 }

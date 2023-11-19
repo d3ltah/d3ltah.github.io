@@ -78,12 +78,8 @@
 	opacity: 1;
 }
 
-.awareness-anchor {
-	transition: all 0.1s ease;
-}
-
-.awareness-anchor:hover {
-	font-weight: 700;
+.anchor-list a, .anchor-list li {
+	width: fit-content;
 }
 
 html {
@@ -144,6 +140,7 @@ li::marker {
 
 li {
 	padding-left: 10px;
+	transition: font-weight 0.1s ease;
 }
 
 #title {
@@ -168,11 +165,11 @@ li {
 	mix-blend-mode: difference;
 	pointer-events: none;
 	overscroll-behavior: none;
-	will-change: transform, top, left, border, background-color;
+	will-change: transform, top, left, border, background-color, height, width;
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	transition: top 0.07s ease, left 0.07s ease, transform 0.1s ease,
-		border 0.1s ease, background-color 0.1s ease;
+		border 0.1s ease, background-color 0.1s ease, height 0.1s ease, width 0.1s ease;
 }
 
 #top-bar {
@@ -193,12 +190,7 @@ li {
 	margin: 100px;
 }
 
-#fonts-list li {
-	transition: font-weight 0.1s ease;
-	width: fit-content;
-}
-
-#fonts-list li:hover {
+ul a:hover {
 	font-weight: 700;
 }
 
