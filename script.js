@@ -1,14 +1,14 @@
 const age = document.getElementById("age");
+const birthday = new Date("Jan 25, 2008 22:55:00");
 
-function daysBetweenDates(d1, d2) {
-	var diffDays, oneDay;
-	oneDay = 24 * 60 * 60 * 1000;
-	diffDays = (d2 - Date.parse(d1)) / oneDay;
-	return diffDays;
+function calcAge() {
+	var ageDifMs = Date.now() - birthday.getTime();
+    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
 function updateAge() {
-    age.innerHTML = (daysBetweenDates("Jan 25, 2008 22:55:00", new Date()) / 365).toFixed(8);
+    age.innerHTML = calcAge();
 }
 
 setInterval(updateAge, 315.57);

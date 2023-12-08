@@ -31,6 +31,11 @@
 	src: url("./fonts/RedHatMono-Variable.ttf") format("truetype-variations");
 }
 
+@font-face {
+	font-family: "DINdong";
+	src: url("./fonts/DINdong.ttf") format("truetype");
+}
+
 .space-grotesk {
 	font-family: "Space Grotesk", sans-serif;
 }
@@ -45,6 +50,10 @@
 
 .red-hat-mono {
 	font-family: "Red Hat Mono", monospace;
+}
+
+.din-dong {
+	font-family: "DINdong", sans-serif;
 }
 
 .comment-subheader {
