@@ -89,3 +89,51 @@ a:after {
 #top {
 	display: flex;
 }
+
+#spot-status-container {
+	margin: 30px 0;
+}
+
+#spot-status {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+#spot-status h6 {
+	margin: 0;
+}
+
+#spot-track-details {
+	display: flex;
+	flex-direction: column;
+}
+
+#spot-track-details p {
+	margin: 0;
+}
+
+#track-name {
+	font-weight: 700;
+}
+
+#spot-album-cover {
+	width: 100px;
+	height: 100px;
+	border-radius: 4px;
+}
+
+#spot-album-cover-container {
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+
+#spot-album-cover-container i {
+	background-color: var(--bg-colour);
+	position: absolute;
+	padding: 5px;
+	border-radius: 50%;
+	top: 100%;
+	transform: translate(-50%, -50%);
+}
