@@ -1,0 +1,91 @@
+@import url('https://fonts.cdnfonts.com/css/uncut-sans');
+@import url('https://fonts.cdnfonts.com/css/pt-mono');
+
+:root {
+	--bg-colour: #faf1f1;
+	--body-colour: #1a1a1a;
+	--accent-colour: #d30000;
+}
+
+body {
+	width: min(80vw, 700px);
+	margin: 120px auto;
+	font-family: "PT Mono", monospace;
+	text-transform: lowercase;
+	background-color: var(--bg-colour);
+	color: var(--body-colour);
+	line-height: 1.4em;
+}
+
+body * {
+	transition: .2s;
+}
+
+h1, h2 {
+	font-weight: 500;
+	font-family: "Uncut Sans", sans-serif;
+}
+
+h2 {
+	margin-top: 30px;
+}
+
+.numeral {
+	font-weight: 700;
+	color: var(--accent-colour);
+}
+
+a {
+	color: var(--accent-colour);
+	text-decoration: none;
+}
+
+a:before {
+	content: "< ";
+}
+
+a:after {
+	content: " >";
+}
+
+.social:before, .social:after {
+	content: "";
+}
+
+#socials {
+	display: flex;
+	gap: 15px;
+}
+
+.social {
+	padding: 0;
+	height: fit-content;
+	width: fit-content;
+	background-color: var(--body-colour);
+	color: var(--bg-colour);
+	padding: 9px 13px;
+}
+
+.social:hover {
+	background-color: var(--accent-colour);
+}
+
+#brief {
+	opacity: 0.5;
+	border: 1px solid var(--body-colour);
+	padding: 15px 20px;
+	margin-bottom: 30px;
+	border-radius: 4px;
+}
+
+#brief p {
+	margin: 3px 0;
+}
+
+#brief p i {
+	width: 1em;
+}
+
+#top {
+	display: flex;
+}
