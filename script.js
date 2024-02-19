@@ -8,8 +8,7 @@ document.getElementById("age").innerHTML = Math.floor(diff / 31557600000);
 function updateTime() {
 	var d = new Intl.DateTimeFormat("en-GB", {
 		hour: "numeric",
-		minute: "numeric",
-		hour12: true
+		minute: "numeric"
 	});
 	document.getElementById("local-time").innerHTML = d.format();
 }
@@ -17,26 +16,22 @@ function updateTime() {
 updateTime();
 setInterval(updateTime, 1000);
 
+const trackName = document.getElementById("track-name");
+const artistName = document.getElementById("artist-name");
+const albumName = document.getElementById("album-name");
+const albumCover = document.getElementById("spot-album-cover");
+const isPlaying = document.getElementById("spot-playing");
+
 function updateSpotifyWidget() {
 	fetch(lastFmUrl)
 		.then(response => response.json())
 		.then(jsonString => {
 			const track = jsonString.recenttracks.track[0];
-			if ("@attr" in track) {
-				document.getElementById("track-name").innerHTML = track.name;
-				document.getElementById("artist-name").innerHTML = track.artist.name;
-				document.getElementById("album-name").innerHTML = track.album["#text"] == track.name ? "" : track.album["#text"];
-				document.getElementById("spot-album-cover").src = track.image[3]["#text"];
-				document.getElementById("spot-album-cover").style = "";
-				document.getElementById("spot-icon").style.opacity = 1;
-			} else {
-				document.getElementById("track-name").innerHTML = "the sound of silence";
-				document.getElementById("artist-name").innerHTML = "";
-				document.getElementById("album-name").innerHTML = "";
-				document.getElementById("spot-album-cover").src = "";
-				document.getElementById("spot-album-cover").style = "background-color: var(--body-colour); opacity: 0.5";
-				document.getElementById("spot-icon").style.opacity = 0;
-			}
+			trackName.innerHTML = track.name;
+			artistName.innerHTML = track.artist.name;
+			albumName.innerHTML = track.album["#text"] == track.name ? "" : "on " + track.album["#text"];
+			albumCover.src = track.image[3]["#text"];
+			isPlaying.innerHTML = "@attr" in track ? "now playing" : "last played";
 		});
 }
 
