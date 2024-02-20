@@ -35,8 +35,8 @@ function updateSpotifyWidget() {
 			albumCover.src = track.image[3]["#text"];
 			isPlaying.innerHTML =
 				"@attr" in track
-					? '<i class="fas fa-play"></i> now playing'
-					: "last played";
+					? '▷ now playing'
+					: "↺ last played";
 		});
 }
 
