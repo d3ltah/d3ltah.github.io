@@ -126,6 +126,15 @@ a:after {
 	opacity: 0.5;
 }
 
+#spot-playing {
+	font-family: "Uncut Sans", sans-serif;
+	font-weight: 500;
+}
+
+#spot-playing i {
+	margin-right: 3px;
+}
+
 #spot-album-cover {
 	width: 100px;
 	height: 100px;
