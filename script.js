@@ -28,10 +28,10 @@ function updateSpotifyWidget() {
 		.then(jsonString => {
 			const track = jsonString.recenttracks.track[0];
 			trackName.innerHTML = track.name;
-			artistName.innerHTML = track.artist.name;
+			artistName.innerHTML = "by " + track.artist.name;
 			albumName.innerHTML = track.album["#text"] == track.name ? "" : "on " + track.album["#text"];
 			albumCover.src = track.image[3]["#text"];
-			isPlaying.innerHTML = "@attr" in track ? "now playing" : "last played";
+			isPlaying.innerHTML = "@attr" in track ? "<i class=\"fas fa-play\"></i> now playing" : "last played";
 		});
 }
 

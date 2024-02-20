@@ -98,6 +98,7 @@ a:after {
 	display: flex;
 	align-items: center;
 	gap: 15px;
+	line-height: 1.1em;
 }
 
 #spot-status h6 {
@@ -115,6 +116,14 @@ a:after {
 
 #track-name {
 	font-weight: 700;
+}
+
+#artist-name {
+	opacity: 0.7;
+}
+
+#album-name {
+	opacity: 0.5;
 }
 
 #spot-album-cover {
