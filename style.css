@@ -95,6 +95,19 @@ a:after {
 
 #theme-toggle {
 	color: var(--body-colour);
+	cursor: pointer;
+	transition: .1s;
+}
+
+#theme-toggle:hover {
+	color: var(--accent-colour);
+	transform: scale(1.1);
+}
+
+#theme-toggle:active {
+	color: var(--body-colour);
+	transform: scale(0.9);
+	opacity: .5;
 }
 
 #theme-toggle::before, #theme-toggle::after {

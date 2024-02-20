@@ -47,7 +47,7 @@ const themeToggleBtn = document.getElementById("theme-toggle");
 const themeToggleIcon = themeToggleBtn.querySelector("i");
 
 function applyTheme() {
-	if (localStorage.getItem("theme") === "dark") {
+	if (window.localStorage.getItem("theme") === "dark") {
 		document.documentElement.style.setProperty("--bg-colour", "#1a1a1a");
 		document.documentElement.style.setProperty("--body-colour", "#faf1f1");
 		themeToggleIcon.classList.remove("fa-mug-hot");
@@ -61,9 +61,9 @@ function applyTheme() {
 }
 
 function toggleTheme() {
-	localStorage.setItem(
+	window.localStorage.setItem(
 		"theme",
-		localStorage.getItem("theme") === "dark" ? "light" : "dark"
+		window.localStorage.getItem("theme") === "dark" ? "light" : "dark"
 	);
 	applyTheme();
 }
