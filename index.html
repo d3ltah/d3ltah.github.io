@@ -14,7 +14,12 @@
 	<body>
 		<div id="top"></div>
 
-		<h1 id="heading">s'appening, i'm d3</h1>
+		<div id="top">
+			<h1 id="heading">s'appening, i'm d3</h1>
+			<a id="theme-toggle" onclick="toggleTheme()">
+				<i class="fa fa-large fa-mug-hot"></i>
+			</a>
+		</div>
 
 		<div id="brief">
 			<p>
@@ -32,7 +37,7 @@
 		<div id="spot-status-container">
 			<div id="spot-status">
 				<div id="spot-album-cover-container">
-					<i id="spot-icon" class="fab fab fa-spotify"></i>
+					<i id="spot-icon" class="fab fa-spotify"></i>
 					<img id="spot-album-cover" />
 				</div>
 				<div id="spot-track-details">
@@ -53,7 +58,7 @@
 			<li>food - nachos</li>
 			<li>style of coffee - latte macchiato</li>
 			<li>game - satisfactory</li>
-			<li>pasta shape - gnocci</li>
+			<li>pasta - gnocci</li>
 			<li>cloud formation - cirrocumulus</li>
 			<li>ascii character - ʤ (U+02A4)</li>
 		</ul>
@@ -123,6 +128,8 @@
 		<h6>
 			made entirely with html, css and vanilla javascript. thoughts? lmk on
 			discord <i class="fas fa-heart"></i>
+			<br />
+			fonts: uncut sans, pt mono
 		</h6>
 
 		<script src="script.js"></script>

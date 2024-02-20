@@ -17,10 +17,6 @@ body {
 	line-height: 1.4em;
 }
 
-body * {
-	transition: .2s;
-}
-
 h1, h2 {
 	font-weight: 500;
 	font-family: "Uncut Sans", sans-serif;
@@ -50,11 +46,6 @@ a:after {
 
 .social:before, .social:after {
 	content: "";
-}
-
-#socials {
-	display: flex;
-	gap: 15px;
 }
 
 .social {
@@ -88,6 +79,16 @@ a:after {
 
 #top {
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#theme-toggle {
+	color: var(--body-colour);
+}
+
+#theme-toggle::before, #theme-toggle::after {
+	content: "";
 }
 
 #spot-status-container {
@@ -154,4 +155,9 @@ a:after {
 	border-radius: 50%;
 	top: 100%;
 	transform: translate(-50%, -50%);
+}
+
+#socials {
+	display: flex;
+	gap: 15px;
 }
