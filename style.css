@@ -31,18 +31,17 @@ body {
 }
 
 body:before {
-	z-index: -2;
+	z-index: -1;
 	content: "";
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-image:
-		radial-gradient(
+	background-image: radial-gradient(
 			circle at var(--cursor-y) var(--cursor-x),
 			var(--bg-colour) 5%,
-			transparent 70%
+			transparent 100%
 		),
 		radial-gradient(
 			circle at var(--cursor-x) var(--cursor-y),
@@ -51,8 +50,6 @@ body:before {
 			var(--bg-colour) 40%
 		);
 	background-size: 200%;
-	filter: blur(60px);
-	mix-blend-mode: overlay;
 }
 
 h1,
