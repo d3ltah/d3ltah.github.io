@@ -43,6 +43,14 @@ function updateSpotifyWidget() {
 updateSpotifyWidget();
 setInterval(updateSpotifyWidget, 1200);
 
+document.addEventListener("mousemove", (event) => {
+	// get the current position of the cursor on the screen as a px value
+	var cursorX = event.clientX;
+	var cursorY = event.clientY;
+	document.documentElement.style.setProperty("--cursor-x", cursorX + "px");
+	document.documentElement.style.setProperty("--cursor-y", cursorY + "px");
+});
+
 const themeToggleBtn = document.getElementById("theme-toggle");
 const themeToggleIcon = themeToggleBtn.querySelector("i");
 
