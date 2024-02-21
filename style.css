@@ -50,6 +50,7 @@ body:before {
 			var(--bg-colour) 40%
 		);
 	background-size: 200%;
+	filter: blur(100px);
 }
 
 h1,
