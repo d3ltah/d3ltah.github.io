@@ -94,10 +94,13 @@ a:after {
 	background-color: var(--body-colour);
 	color: var(--bg-colour);
 	padding: 9px 13px;
+	transition: 0.2s;
 }
 
 .social:hover {
-	background-color: var(--accent-colour);
+	background-color: var(--bg-colour);
+	color: var(--body-colour);
+	box-shadow: var(--bg-colour) 0px 0px 40px;
 }
 
 #brief {
@@ -124,6 +127,7 @@ a:after {
 
 #visits-text {
 	font-size: 0.8em;
+	opacity: 0.5;
 	margin: 0;
 	font-family: "Uncut Sans", sans-serif;
 }
@@ -180,7 +184,7 @@ a:after {
 }
 
 #track-name {
-	font-weight: 700;
+	font-weight: 500;
 }
 
 #artist-name {
