@@ -41,7 +41,7 @@ function updateSpotifyWidget() {
 updateSpotifyWidget();
 setInterval(updateSpotifyWidget, 1200);
 
-fetch("https://api.api-ninjas.com/v1/counter/?hit=true&id=d3smellsoftangerines", {
+fetch(`https://api.api-ninjas.com/v1/counter/?id=d3smellsoftangerines${window.location.href=="127.0.0.1:3000" ? "" : "?hit=true"}`, {
 	headers: { "X-Api-Key": "oMQdq+BBFVRrNcrZukVJQg==5CYS8gJyM8BES8Q7" }
 })
 	.then((response) => response.json())
