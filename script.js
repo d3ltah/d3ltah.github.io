@@ -1,5 +1,3 @@
-const lastFmUrl =
-	"https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=bbqbeanburger&api_key=786ecc4a87d38105baee228090b1d19c&limit=1&extended=1&format=json";
 var birthdate = new Date("Jan 25 2008");
 var cur = new Date();
 var diff = cur - birthdate;
@@ -24,7 +22,9 @@ const albumCover = document.getElementById("spot-album-cover");
 const isPlaying = document.getElementById("spot-playing");
 
 function updateSpotifyWidget() {
-	fetch(lastFmUrl)
+	fetch(
+		"https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=bbqbeanburger&api_key=786ecc4a87d38105baee228090b1d19c&limit=1&extended=1&format=json"
+	)
 		.then((response) => response.json())
 		.then((jsonString) => {
 			const track = jsonString.recenttracks.track[0];
@@ -34,14 +34,23 @@ function updateSpotifyWidget() {
 				track.album["#text"] == track.name ? "" : "on " + track.album["#text"];
 			albumCover.src = track.image[3]["#text"];
 			isPlaying.innerHTML =
-				"@attr" in track
-					? '▷ now playing'
-					: "↺ last played";
+				"@attr" in track ? "▷ now playing" : "↺ last played";
 		});
 }
 
 updateSpotifyWidget();
 setInterval(updateSpotifyWidget, 1200);
+
+fetch("https://api.api-ninjas.com/v1/counter?id=d3smellsliketangerines&hit=true", {
+	headers: { "X-Api-Key": "oMQdq+BBFVRrNcrZukVJQg==5CYS8gJyM8BES8Q7" },
+})
+	.then((response) => response.json())
+	.then((jsonString) => {
+		document.getElementById("visits").innerHTML = "#" + jsonString.value.replace(
+			/\B(?=(\d{3})+(?!\d))/g,
+			","
+		);
+	});
 
 document.addEventListener("mousemove", (event) => {
 	// get the current position of the cursor on the screen as a px value
