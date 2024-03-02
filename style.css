@@ -137,25 +137,30 @@ a:after {
 	margin: 0;
 }
 
-#theme-toggle {
+#top-buttons-container {
+	display: flex;
+	gap: 10px;
+	color: var(--body-colour);
+}
+
+#top-buttons-container a {
 	color: var(--body-colour);
 	cursor: pointer;
 	transition: 0.1s;
 }
 
-#theme-toggle:hover {
-	color: var(--accent-colour);
+#top-buttons-container a:hover {
 	transform: scale(1.1);
 }
 
-#theme-toggle:active {
+#top-buttons-container a:active {
 	color: var(--body-colour);
 	transform: scale(0.9);
 	opacity: 0.5;
 }
 
-#theme-toggle::before,
-#theme-toggle::after {
+#top-buttons-container a:before,
+#top-buttons-container a:after {
 	content: "";
 }
 
@@ -229,3 +234,4 @@ a:after {
 	display: flex;
 	gap: 15px;
 }
+

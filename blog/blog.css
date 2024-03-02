@@ -1,0 +1,134 @@
+body {
+    width: min(90vw, 900px);
+    font-family: "Uncut Sans", sans-serif;
+    font-size: 1.3em;
+    background-color: var(--bg-colour);
+    background-image: none;
+    backface-visibility: hidden;
+    font-weight: 400;
+}
+
+body * {
+    transition: 0.2s;
+}
+
+body:before {
+    display: none;
+}
+
+main {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+a:before, a:after {
+    content: "";
+}
+
+#postlist {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7em;
+    width: min(40vw, 200px);
+    line-height: 1.1em;
+}
+
+#postlist * {
+    margin: 5px 0;
+}
+
+#viewer {
+    flex-grow: 1;
+    text-transform: none;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    width: min(60vw, 900px);
+}
+
+#viewer h1, 
+#viewer h2,
+#viewer h3,
+#viewer h4,
+#viewer h5,
+#viewer h6 {
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+#viewer h1 {
+    font-size: 1.8em;
+}
+
+#viewer h2 {
+    font-size: 1.5em;
+}
+
+#viewer h3 {
+    font-size: 1.3em;
+}
+
+#viewer h4 {
+    font-size: 1.1em;
+}
+
+#viewer h5 {
+    font-size: 0.9em;
+}
+
+#viewer h6 {
+    font-size: 0.7em;
+}
+
+#viewer code,
+#viewer pre {
+    font-family: "Azeret Mono", monospace;
+    background-color: var(--body-colour);
+    color: var(--bg-colour);
+    padding: 0 3px;
+    border-radius: 5px;
+}
+
+#viewer pre {
+    padding: 15px 17px;
+    font-size: 0.8em;
+    line-height: 1.4em;
+}
+
+.post-button {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.4em;
+    font-size: 0.8em;
+    background-color: var(--bg-colour);
+    color: var(--body-colour);
+    box-shadow: 0 0 0 0.5px var(--body-colour);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.selected-post {
+    color: var(--accent-colour);
+    box-shadow: 0 0 0 2px var(--accent-colour);
+}
+
+.post-button:hover {
+    box-shadow: 0 0 0 2px var(--body-colour);
+    transform: scale(1.01);
+    color: var(--body-colour);
+}
+
+.selected-post:hover {
+    box-shadow: 0 0 0 2px var(--accent-colour);
+    transform: scale(1.01);
+    color: var(--accent-colour);
+}
+
+.post-button-timestamp {
+    text-transform: lowercase;
+}
