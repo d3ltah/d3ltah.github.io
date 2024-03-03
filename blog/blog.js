@@ -1,9 +1,12 @@
-var showdown_converter = new showdown.Converter();
+const showdown_converter = new showdown.Converter();
+
+dayjs.extend(dayjs_plugin_relativeTime);
 
 fetch(
-	"https://gist.githubusercontent.com/d3ltah/f14a2eea4c69a5fc4f53734e5724d707/raw/14a4ad45cd3213e3e7f0027371db930ca695f1e0/posts"
+	"https://api.github.com/gists/f14a2eea4c69a5fc4f53734e5724d707"
 )
-	.then((response) => response.text())
+	.then((response) => response.json())
+	.then((json) => json.files["posts"].content)
 	.then((encoded) => atob(encoded))
 	.then((decoded) => JSON.parse(decoded))
 	.then((json) => {
@@ -26,8 +29,20 @@ fetch(
 				}
 				const button = document.getElementById(postId);
 				button.classList.add("selected-post");
-				document.getElementById("viewer").innerHTML =
+				document.getElementById("viewer-content").innerHTML =
 					showdown_converter.makeHtml(postContent);
+                document.getElementById("viewer-date").innerHTML = new Date(
+                        postTimestamp * 1000
+                    ).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                        hour: "numeric",
+                        minute: "numeric",
+                    });
+                document.getElementById("viewer-relative-time").innerHTML = 
+                    dayjs(postTimestamp * 1000).fromNow();
+                document.getElementById("viewer-info").style.visibility = "visible";
 			});
 
 			const postButtonTitle = document.createElement("p");

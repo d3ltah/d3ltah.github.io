@@ -25,12 +25,20 @@
 		</div>
 		<main>
 			<section id="postlist"></section>
-			<section id="viewer"></section>
+			<section id="viewer">
+                <div id="viewer-info">
+                    <p id="viewer-date"></p>
+                    <p>•</p>
+                    <p id="viewer-relative-time"></p>
+                </div>
+                <div id="viewer-content"></div>
+            </section>
 		</main>
 	</body>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
-	<script src="https://enkimute.github.io/res/shorty.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.5/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.5/plugin/relativeTime.min.js"></script>
 	<script src="blog.js"></script>
 	<script src="../theme.js"></script>
 </html>
