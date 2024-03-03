@@ -131,6 +131,7 @@ a:before, a:after {
 .selected-post {
     color: var(--accent-colour);
     box-shadow: 0 0 0 2px var(--accent-colour);
+    font-weight: 650;
 }
 
 .post-button:hover {
