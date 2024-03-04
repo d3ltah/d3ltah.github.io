@@ -10,9 +10,7 @@ fetch(
 	.then((encoded) => atob(encoded))
 	.then((decoded) => JSON.parse(decoded))
 	.then((json) => {
-		console.log(json);
 		const posts = json.posts.sort((a, b) => b.timestamp - a.timestamp);
-		console.log(posts);
 
 		for (var post of posts) {
 			const postId = post.id;

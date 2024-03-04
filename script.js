@@ -61,7 +61,6 @@ fetch(
 	.then((response) => response.json())
 	.then((jsonString) => {
 		const favouriteArtists = jsonString.topartists.artist;
-		console.log(favouriteArtists);
 		const favouriteArtistsString = `${favouriteArtists[0].name},
 			${favouriteArtists[1].name},
 			${favouriteArtists[2].name}`;
