@@ -41,15 +41,33 @@ function updateSpotifyWidget() {
 updateSpotifyWidget();
 setInterval(updateSpotifyWidget, 1200);
 
-fetch(`https://api.api-ninjas.com/v1/counter/?id=d3smellsoftangerines${window.location.href.startsWith("http://127.0.0.1:3000") ? "" : "&hit=true"}`, {
-	headers: { "X-Api-Key": "oMQdq+BBFVRrNcrZukVJQg==5CYS8gJyM8BES8Q7" }
-})
+fetch(
+	`https://api.api-ninjas.com/v1/counter/?id=d3smellsoftangerines${
+		window.location.href.startsWith("http://127.0.0.1:3000") ? "" : "&hit=true"
+	}`,
+	{
+		headers: { "X-Api-Key": "oMQdq+BBFVRrNcrZukVJQg==5CYS8gJyM8BES8Q7" },
+	}
+)
 	.then((response) => response.json())
 	.then((jsonString) => {
-		document.getElementById("visits").innerHTML = "#" + jsonString.value.toString().replace(
-			/\B(?=(\d{3})+(?!\d))/g,
-			","
-		);
+		document.getElementById("visits").innerHTML =
+			"#" + jsonString.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	});
+
+fetch(
+	"https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=bbqbeanburger&api_key=786ecc4a87d38105baee228090b1d19c&limit=3&period=7day&format=json"
+)
+	.then((response) => response.json())
+	.then((jsonString) => {
+		const favouriteArtists = jsonString.topartists.artist;
+		console.log(favouriteArtists);
+		const favouriteArtistsString = `${favouriteArtists[0].name},
+			${favouriteArtists[1].name},
+			${favouriteArtists[2].name}`;
+
+		document.getElementById("favourite-artists").innerHTML =
+			favouriteArtistsString;
 	});
 
 document.addEventListener("mousemove", (event) => {
