@@ -1,5 +1,5 @@
 body {
-    width: min(90vw, 900px);
+    width: min(90vw, 1400px);
     font-family: "Uncut Sans", sans-serif;
     font-size: 1.3em;
     background-color: var(--bg-colour);
@@ -106,6 +106,9 @@ a:before, a:after {
     opacity: 0.5;
     font-size: 0.7em;
     visibility: hidden;
+    align-items: center;
+    line-height: 1em;
+    margin-bottom: 10px;
 }
 
 #viewer-info * {
@@ -116,7 +119,6 @@ a:before, a:after {
     display: flex;
     flex-direction: column;
     line-height: 1.2em;
-    font-size: 0.7em;
     background-color: var(--bg-colour);
     color: var(--body-colour);
     box-shadow: 0 0 0 0.5px var(--body-colour);
@@ -149,6 +151,7 @@ a:before, a:after {
 .post-button-title {
     text-transform: none;
     margin: 0;
+    margin-bottom: 5px;
 }
 
 .post-button-timestamp {
