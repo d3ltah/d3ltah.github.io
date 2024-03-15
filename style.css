@@ -108,6 +108,11 @@ a:after {
 	margin-top: 50px;
 }
 
+.asterisk::after {
+	content: "*";
+	opacity: 0.5;
+}
+
 #brief {
 	opacity: 0.5;
 	border: 1px solid var(--body-colour);
