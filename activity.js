@@ -35,6 +35,7 @@ function updateSpotifyDisplay() {
 					1
 				);
 				document.getElementById("spotify-uts").innerHTML = "Now Playing";
+				document.getElementById("spotify-img").style.animation = "";
 			} else {
 				document.documentElement.style.setProperty(
 					"--spotify-live-dot-size",
@@ -42,6 +43,7 @@ function updateSpotifyDisplay() {
 				);
 				document.getElementById("spotify-uts").innerHTML =
 					timeSince(track.date.uts * 1000) + " ago";
+				document.getElementById("spotify-img").style.animation = "none";
 			}
 		});
 }
