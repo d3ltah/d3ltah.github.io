@@ -10,7 +10,7 @@ function updateSpotifyDisplay() {
 		.then((json) => {
 			var track = json.recenttracks.track[0];
 			document.getElementById("spotify-title").innerHTML = track.name;
-			document.getElementById("spotify-artist").innerHTML = track.artist.name;
+			document.getElementById("spotify-artist").innerHTML = "by " + track.artist.name.toUpperCase();
 			document.getElementById("spotify-img").src = track.image[3]["#text"];
 
 			document.getElementById("spotify-button").href = track.url;
