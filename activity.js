@@ -19,7 +19,7 @@ function updateSpotifyDisplay() {
 				document.getElementById("spotify-album").innerHTML =
 					"on " + track.album["#text"];
 				document.getElementById("spotify-album").style.width = "100%";
-				document.getElementById("spotify-album").style.height = "1em";
+				document.getElementById("spotify-album").style.height = "1.2em";
 			} else {
 				document.getElementById("spotify-album").style.width = "0";
 				document.getElementById("spotify-album").style.height = "0";
@@ -49,7 +49,6 @@ function updateSpotifyDisplay() {
 }
 
 function updateTopArtists() {
-	var artists = [];
 	fetch(
 		`https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=bbqbeanburger&api_key=${key}&format=json&limit=7`
 	)
