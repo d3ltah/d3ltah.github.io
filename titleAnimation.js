@@ -1,6 +1,7 @@
 var cycleTicker = 0;
 const Names = [
 	"d3",
+	"BingBingPie",
 	"deltah",
 	"bbqbeanburger",
 	"D3LTAH",
