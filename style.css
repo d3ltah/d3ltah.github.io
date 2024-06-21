@@ -184,7 +184,6 @@ p a,
 li a {
 	animation: var(--accent);
 	text-decoration: none;
-	white-space: nowrap;
 	transition: 0.2s var(--bounce-curve);
 }
 
