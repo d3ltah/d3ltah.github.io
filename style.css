@@ -441,11 +441,12 @@ hr {
 	align-content: center;
 	align-items: center;
 	margin-right: 15px;
-	margin-left: 80px;
+	margin-left: 300px;
 	min-width: 0;
 }
 
 #spotify-uts {
+	font-size: 0.8em;
 	line-height: 1;
 	font-family: "Azeret Mono", monospace;
 	white-space: nowrap;
