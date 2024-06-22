@@ -464,6 +464,7 @@ hr {
 #spotify-live-dot {
 	height: 0.8em;
 	animation: pulse 1s infinite;
+	animation-timing-function: var(--bounce-curve);
 	align-self: baseline;
 }
 
