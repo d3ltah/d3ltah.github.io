@@ -14,12 +14,12 @@ function toggleThemeCookie() {
 
 function updateTheme() {
 	if (window.localStorage.getItem("theme") == "light") {
-		document.documentElement.style.setProperty("--background", "#0f0f0f");
-		document.documentElement.style.setProperty("--foreground", "#f0f0f0");
+		document.documentElement.style.setProperty("--background", "#1a1a1a");
+		document.documentElement.style.setProperty("--foreground", "#faf1f1");
 		ThemeButton.style.transform = "scaleX(-1)";
 	} else {
-		document.documentElement.style.setProperty("--background", "#f0f0f0");
-		document.documentElement.style.setProperty("--foreground", "#0f0f0f");
+		document.documentElement.style.setProperty("--background", "#faf1f1");
+		document.documentElement.style.setProperty("--foreground", "#1a1a1a");
 		ThemeButton.style.transform = "scaleX(1)";
 	}
 
