@@ -327,7 +327,7 @@ hr {
 	transform: translateX(5px);
 	opacity: 0;
 	margin: 10px;
-	transition: all 0.2s ease-out;
+	transition: all 0.2s var(--bounce-curve);
 }
 
 #name-cycle {
@@ -381,7 +381,7 @@ hr {
 	width: 100%;
 	height: 100%;
 	display: flex;
-	transition: all 0.5s ease-out;
+	transition: all 0.5s var(--bounce-curve);
 	text-decoration: none;
 }
 
@@ -401,19 +401,19 @@ hr {
 	animation: var(--accent);
 	text-overflow: clip;
 	width: 100%;
-	transition: all 0.5s ease-out;
+	transition: all 0.5s var(--bounce-curve);
 }
 
 #spotify-artist {
 	font-size: 0.8em;	
-	transition: all 0.5s ease-out;
+	transition: all 0.5s var(--bounce-curve);
 }
 
 #spotify-album {
 	font-size: 0.8em;
 	opacity: 0.5;
 	width: 0;
-	transition: all 0.5s ease-out;
+	transition: all 0.5s var(--bounce-curve);
 	overflow: hidden;
 	white-space: nowrap;
 }
@@ -463,14 +463,13 @@ hr {
 
 #spotify-live-dot {
 	height: 0.8em;
-	animation: pulse 1s infinite;
-	animation-timing-function: var(--bounce-curve);
+	animation: pulse 1s infinite var(--bounce-curve);
 	align-self: baseline;
 }
 
 #spotify-live-dot::before {
 	transform: scale(var(--spotify-live-dot-size));
-	transition: transform 0.5s ease-in-out;
+	transition: transform 0.5s var(--bounce-curve);
 	animation: var(--accent);
 	margin-right: 3px;
 	display: block;
@@ -499,5 +498,5 @@ hr {
 	margin: 3px;
 	box-sizing: border-box;
 	border-radius: 20px;
-	transition: all 0.2s ease-out;
+	transition: all 0.2s var(--bounce-curve);
 }
