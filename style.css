@@ -1,11 +1,13 @@
 @font-face {
 	font-family: "Azeret Mono";
-	src: url("./fonts/AzeretMono-VariableFont_wght.ttf") format("truetype-variations");
+	src: url("./fonts/AzeretMono-VariableFont_wght.ttf")
+		format("truetype-variations");
 }
 
 @font-face {
 	font-family: "Plus Jakarta Sans";
-	src: url("./fonts/PlusJakartaSans-VariableFont_wght.ttf") format("truetype-variations");
+	src: url("./fonts/PlusJakartaSans-VariableFont_wght.ttf")
+		format("truetype-variations");
 }
 
 @font-face {
@@ -18,18 +20,13 @@
 	--foreground: #1a1a1a;
 	--accent: default-accent 7s linear infinite;
 	--spotify-live-dot-size: 0.8em;
-	--bounce-curve: cubic-bezier(0.2, 0.885, 0.32, 1.3);
+	--bounce-curve: cubic-bezier(0.71, 0, 0.35, 2);
 }
 
 @keyframes slide-in {
 	0% {
 		transform: translateY(-15px);
 		opacity: 0;
-	}
-
-	30% {
-		opacity: 0.5;
-		transform: translateY(5px);
 	}
 
 	50% {
@@ -368,7 +365,7 @@ hr {
 	justify-content: space-between;
 	height: 110px;
 	width: 100%;
-	margin: 0 auto;
+	margin: 15px auto;
 	background-color: var(--foreground);
 	flex-wrap: nowrap;
 	line-height: 1.2;
@@ -387,6 +384,7 @@ hr {
 
 #spotify-song {
 	display: flex;
+	overflow: clip;
 }
 
 #spotify-container p {
@@ -399,14 +397,14 @@ hr {
 	font-weight: bold;
 	font-size: 1.2em;
 	animation: var(--accent);
-	text-overflow: clip;
-	width: 100%;
 	transition: all 0.5s var(--bounce-curve);
+	text-overflow: ellipsis;
 }
 
 #spotify-artist {
-	font-size: 0.8em;	
+	font-size: 0.8em;
 	transition: all 0.5s var(--bounce-curve);
+	text-overflow: ellipsis;
 }
 
 #spotify-album {
@@ -416,6 +414,7 @@ hr {
 	transition: all 0.5s var(--bounce-curve);
 	overflow: hidden;
 	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 #spotify-img-container {
@@ -425,8 +424,10 @@ hr {
 
 #spotify-img {
 	display: block;
-	width: 100%;
-	height: auto;
+	min-width: 90px;
+	max-width: 90px;
+	min-height: 90px;
+	max-height: 90px;
 	transition: all 1s ease-in-out;
 	align-self: center;
 	overflow: hidden;
@@ -434,21 +435,8 @@ hr {
 	animation: spin 7.2s linear infinite;
 }
 
-#spotify-uts-container {
-	align-self: center;
-	height: 1em;
-	display: flex;
-	align-content: center;
-	align-items: center;
-	margin-right: 15px;
-	margin-left: 300px;
-	min-width: 0;
-}
-
 #spotify-uts {
-	font-size: 0.8em;
 	line-height: 1;
-	font-family: "Azeret Mono", monospace;
 	white-space: nowrap;
 }
 
@@ -459,20 +447,6 @@ hr {
 #spotify-info p {
 	white-space: nowrap;
 	text-overflow: ellipsis;
-}
-
-#spotify-live-dot {
-	height: 0.8em;
-	animation: pulse 1s infinite var(--bounce-curve);
-	align-self: baseline;
-}
-
-#spotify-live-dot::before {
-	transform: scale(var(--spotify-live-dot-size));
-	transition: transform 0.5s var(--bounce-curve);
-	animation: var(--accent);
-	margin-right: 3px;
-	display: block;
 }
 
 #spotify-artists {

@@ -10,7 +10,8 @@ function updateSpotifyDisplay() {
 		.then((json) => {
 			var track = json.recenttracks.track[0];
 			document.getElementById("spotify-title").innerHTML = track.name;
-			document.getElementById("spotify-artist").innerHTML = "by " + track.artist.name.toUpperCase();
+			document.getElementById("spotify-artist").innerHTML =
+				"by " + track.artist.name.toUpperCase();
 			document.getElementById("spotify-img").src = track.image[3]["#text"];
 
 			document.getElementById("spotify-button").href = track.url;
@@ -42,7 +43,7 @@ function updateSpotifyDisplay() {
 					0
 				);
 				document.getElementById("spotify-uts").innerHTML =
-					timeSince(track.date.uts * 1000) + " ago";
+					"Activity <span style='font-weight: 300'>- " + timeSince(track.date.uts * 1000) + " ago</span>";
 				document.getElementById("spotify-img").style.animation = "none";
 			}
 		});
