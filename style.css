@@ -227,7 +227,7 @@ hr {
 }
 
 .pop-animation {
-	animation: slide-in 1s ease-out;
+	animation: slide-in 1.2s var(--bounce-curve);
 }
 
 .socials-list {
