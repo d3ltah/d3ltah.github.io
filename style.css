@@ -144,6 +144,10 @@ section h4 {
 	margin-bottom: 0.3em;
 }
 
+h1 {
+	margin: 0;
+}
+
 h1,
 h2,
 h3 {
@@ -277,6 +281,13 @@ hr {
 	pointer-events: none;
 }
 
+#top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 40px;
+}
+
 #confetti-particles {
 	position: absolute;
 	top: 0;
@@ -361,6 +372,7 @@ hr {
 
 #logo-button:active {
 	transform: scale(0.9);
+	font-weight: inherit;
 }
 
 #spotify-container {

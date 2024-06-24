@@ -6,10 +6,28 @@
 		<title>Document</title>
 
 		<link rel="stylesheet" href="../style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 	</head>
 	<body>
 		<main>
-			<h1>design elements</h1>
+			<div
+				id="top"
+			>
+				<h1>Design</h1>
+				<div id="theme-toggle-section">
+					<a id="theme-toggle" onclick="toggleTheme()"
+						><i class="fa-solid fa-toggle-on fa-xl"></i
+					></a>
+					<p id="theme-toggle-note">Turn on dark mode ></p>
+					<p></p>
+				</div>
+			</div>
 
 			<section>
 				<h3>
@@ -54,31 +72,52 @@
 				<ul>
 					<li>
 						White:
-						<span style="font-family: 'Azeret Mono'; font-weight: 700; background-color: #faf1f1; color: #1a1a1a; padding: 2.5px 5px;"
+						<span
+							style="
+								font-family: 'Azeret Mono';
+								font-weight: 700;
+								background-color: #faf1f1;
+								color: #1a1a1a;
+								padding: 2.5px 5px;
+							"
 							>#faf1f1</span
 						>
 					</li>
 					<li>
 						Black:
-						<span style="font-family: 'Azeret Mono'; font-weight: 700; background-color: #1a1a1a; color: #faf1f1; padding: 2.5px 5px;"
+						<span
+							style="
+								font-family: 'Azeret Mono';
+								font-weight: 700;
+								background-color: #1a1a1a;
+								color: #faf1f1;
+								padding: 2.5px 5px;
+							"
 							>#1a1a1a</span
 						>
 					</li>
 					<li>
 						Red:
-						<span style="font-family: 'Azeret Mono'; font-weight: 700; background-color: #d30000; color: #faf1f1; padding: 2.5px 5px;"
+						<span
+							style="
+								font-family: 'Azeret Mono';
+								font-weight: 700;
+								background-color: #d30000;
+								color: #faf1f1;
+								padding: 2.5px 5px;
+							"
 							>#d30000</span
 						>
 					</li>
 				</ul>
 			</section>
 
-            <section>
-                <h2>shapes</h2>
-                <p>
-                    Boxes and circles. That's about it.
-                </p>
-            </section>
+			<section>
+				<h2>shapes</h2>
+				<p>Boxes and circles. That's about it.</p>
+			</section>
 		</main>
+
+		<script src="../colourTheme.js"></script>
 	</body>
 </html>
