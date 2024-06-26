@@ -232,6 +232,21 @@ hr {
 	width: 80%;
 }
 
+#irl-section {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.irl-container {
+	font-family: "Azeret Mono", monospace;
+	background-color: var(--foreground);
+	color: var(--background);
+	padding: 5px 10px;
+	border-radius: 1.5em;
+	transition: all 0.3s ease-out;
+}
+
 .pop-animation {
 	animation: slide-in 1.2s var(--bounce-curve);
 }
@@ -357,7 +372,7 @@ hr {
 
 #logo-button {
 	width: 60px;
-	transition: 0.4s var(--bounce-curve);
+	transition: 0.3s var(--bounce-curve);
 	font-family: "Uncut Sans", sans-serif;
 	font-size: 2em;
 }
@@ -383,7 +398,11 @@ hr {
 	height: 110px;
 	width: 100%;
 	margin: 15px auto;
-	background-color: var(--foreground);
+	background-image: radial-gradient(
+		200px at 0 50%,
+		#d30000,
+		var(--foreground)
+	);
 	flex-wrap: nowrap;
 	line-height: 1.2;
 	overflow: hidden;
