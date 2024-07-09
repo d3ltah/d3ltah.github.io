@@ -11,6 +11,16 @@
 }
 
 @font-face {
+	font-family: "Satoshi";
+	src: url("./fonts/Satoshi-VariableFont_wght.ttf") format("truetype-variations");
+}
+
+@font-face {
+	font-family: "DM Mono";
+	src: url("./fonts/DMMono-Regular.ttf") format("truetype");
+}
+
+@font-face {
 	font-family: "Uncut Sans";
 	src: url("./fonts/UncutSans-Variable.ttf") format("truetype-variations");
 }
@@ -114,18 +124,20 @@ html {
 
 body {
 	margin: 0;
-	font-family: "Plus Jakarta Sans", sans-serif;
-	letter-spacing: 0.035em;
+	font-family: "Satoshi", sans-serif;
+	letter-spacing: 0.025em;
+	font-size: 1.2em;
 	color: var(--foreground);
 	background-color: var(--background);
 	transition: all 0.5s ease;
 	animation: slide-in 1s ease-out;
 	user-select: none;
 	line-height: 1.5em;
+	overflow-x: hidden;
 }
 
 main {
-	max-width: 800px;
+	width: min(90vw, 1200px);
 	margin: 0 auto;
 	margin-top: 60px;
 	padding: 40px;
@@ -151,7 +163,7 @@ h1 {
 h1,
 h2,
 h3 {
-	font-family: "Azeret Mono", monospace;
+	font-family: "DM Mono", monospace;
 	font-weight: normal;
 }
 
@@ -398,11 +410,7 @@ hr {
 	height: 110px;
 	width: 100%;
 	margin: 15px auto;
-	background-image: radial-gradient(
-		200px at 0 50%,
-		#d30000,
-		var(--foreground)
-	);
+	background-color: var(--foreground);
 	flex-wrap: nowrap;
 	line-height: 1.2;
 	overflow: hidden;
