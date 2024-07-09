@@ -37,15 +37,14 @@ function breakLights() {
 	document.body.style.backgroundColor = "#000000";
 
 	let brokenTextContainer = document.createElement("div");
-	brokenTextContainer.style.display = "table";
-	brokenTextContainer.style.height = "100vh";
-	brokenTextContainer.style.width = "100vw";
+	brokenTextContainer.id = "broken-text-container";
+	// brokenTextContainer.style.display = "table";
+	// brokenTextContainer.style.height = "100vh";
+	// brokenTextContainer.style.width = "100vw";
 
 	let brokenText = document.createElement("p");
-	brokenText.innerHTML = "Nice one, you div. You broke the lights.";
-	brokenText.style.textAlign = "center";
-	brokenText.style.display = "table-cell";
-	brokenText.style.verticalAlign = "middle";
+	brokenText.id = "broken-text";
+	brokenText.innerHTML = "<span style='font-size: 1.3em; font-weight: bold;'>Fuse Broken</span><br />One of your Power Grids has shut down.";
 	brokenText.style.color = "#f0f0f0";
 
 	FuseSound.play();
@@ -53,9 +52,6 @@ function breakLights() {
 		brokenTextContainer.appendChild(brokenText);
 		document.body.appendChild(brokenTextContainer);
 	}, 1000);
-	setTimeout(() => {
-		brokenTextContainer.load();
-	}, 3000);
 }
 
 function toggleTheme() {

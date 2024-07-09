@@ -1,16 +1,4 @@
 @font-face {
-	font-family: "Azeret Mono";
-	src: url("./fonts/AzeretMono-VariableFont_wght.ttf")
-		format("truetype-variations");
-}
-
-@font-face {
-	font-family: "Plus Jakarta Sans";
-	src: url("./fonts/PlusJakartaSans-VariableFont_wght.ttf")
-		format("truetype-variations");
-}
-
-@font-face {
 	font-family: "Satoshi";
 	src: url("./fonts/Satoshi-VariableFont_wght.ttf") format("truetype-variations");
 }
@@ -23,6 +11,11 @@
 @font-face {
 	font-family: "Uncut Sans";
 	src: url("./fonts/UncutSans-Variable.ttf") format("truetype-variations");
+}
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("./fonts/OpenSans-VariableFont_wdth,wght.ttf") format("truetype-variations");
 }
 
 :root {
@@ -517,4 +510,21 @@ hr {
 	box-sizing: border-box;
 	border-radius: 20px;
 	transition: all 0.2s var(--bounce-curve);
+}
+
+#broken-text-container {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+}
+
+#broken-text {
+	font-family: "Open Sans", sans-serif;
+	width: fit-content;
+	text-align: left;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	vertical-align: center;
 }
