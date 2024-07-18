@@ -1,6 +1,7 @@
 @font-face {
 	font-family: "Satoshi";
-	src: url("./fonts/Satoshi-VariableFont_wght.ttf") format("truetype-variations");
+	src: url("./fonts/Satoshi-VariableFont_wght.ttf")
+		format("truetype-variations");
 }
 
 @font-face {
@@ -15,7 +16,8 @@
 
 @font-face {
 	font-family: "Open Sans";
-	src: url("./fonts/OpenSans-VariableFont_wdth,wght.ttf") format("truetype-variations");
+	src: url("./fonts/OpenSans-VariableFont_wdth,wght.ttf")
+		format("truetype-variations");
 }
 
 :root {
@@ -53,6 +55,20 @@
 
 	100% {
 		transform: scale(0.9);
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
 	}
 }
 
@@ -244,7 +260,7 @@ hr {
 }
 
 .irl-container {
-	font-family: "Azeret Mono", monospace;
+	font-family: "DM Mono", monospace;
 	background-color: var(--foreground);
 	color: var(--background);
 	padding: 5px 10px;
@@ -306,6 +322,83 @@ hr {
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 40px;
+}
+
+#quote {
+	display: flex;
+	line-height: 1.3em;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	gap: 0.3em;
+	width: 100%;
+	height: 100%;
+}
+
+#quotes-container {
+	font-family: "DM Mono", monospace;
+	display: flex;
+	flex-direction: column;
+	min-height: 200px;
+	justify-content: center;
+	vertical-align: middle;
+	align-items: center;
+	border-radius: 1.5em;
+}
+
+#quote-text {
+	margin: 0;
+	transition: all 0.3s var(--bounce-curve);
+}
+
+#quotes-container p {
+	margin: 0;
+}
+
+#quote-author {
+	display: flex;
+	gap: 0.8ch;
+	justify-content: center;
+	font-size: 0.9em;
+}
+
+#quote-author span {
+	opacity: 0.5;
+} 
+
+#quote-sep {
+	opacity: 1 !important;
+	font-weight: bold;
+	animation: var(--accent);
+}
+
+#new-quote-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+#new-quote-button {
+	font-family: "Satoshi", sans-serif;
+	font-size: 0.8em;
+	line-height: 1em;
+	margin: 0 auto;
+	border: 0;
+	background-color: transparent;
+	color: var(--foreground);
+	padding: 15px;
+	border-radius: 1.5em;
+	transition: all 0.2s var(--bounce-curve);
+	cursor: pointer;
+	outline: 2px solid var(--foreground);
+}
+
+#new-quote-button:hover {
+	outline: 0px;
+	background-color: var(--foreground);
+	color: var(--background);
+	transform: rotate(45deg);
 }
 
 #confetti-particles {

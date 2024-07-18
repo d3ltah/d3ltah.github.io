@@ -23,9 +23,7 @@
 
 	<body>
 		<main>
-			<div
-				id="top"
-			>
+			<div id="top">
 				<a
 					id="logo-button"
 					class="confetti-button-wrapper"
@@ -53,9 +51,23 @@
 			</div>
 			<h6><span id="pronouns">[ he/him ]</span></h6>
 
-			<h3>
-				Fuck Nestlé, fuck Apple, fuck the Tories ✌
-			</h3>
+			<div id="new-quote-container">
+				<button id="new-quote-button" onclick="newQuote()">
+					<i class="fas fa-sync"></i>
+				</button>
+			</div>
+
+			<div id="quotes-container">
+				<div id="quote">
+					<span id="quote-text">
+					</span>
+					<div id="quote-author">
+						<span id="author"></span>
+						<span id="quote-sep">>></span>
+						<span id="source"></span>
+					</div>
+				</div>
+			</div>
 
 			<hr />
 
@@ -290,6 +302,8 @@
 		<script src="./irl.js"></script>
 		<script src="./colourTheme.js"></script>
 		<script src="./activity.js"></script>
+		<script src="./quotes.js"></script>
+		<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
 	</body>
 </html>
