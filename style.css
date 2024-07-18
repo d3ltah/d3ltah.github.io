@@ -387,8 +387,8 @@ hr {
 	border: 0;
 	background-color: transparent;
 	color: var(--foreground);
-	padding: 15px;
-	border-radius: 1.5em;
+	padding: 10px;
+	border-radius: 50%;
 	transition: all 0.2s var(--bounce-curve);
 	cursor: pointer;
 	outline: 2px solid var(--foreground);
