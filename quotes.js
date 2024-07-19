@@ -1,3 +1,4 @@
+const quoteWrapper = document.querySelector("#quote-wrapper");
 const quoteText = document.querySelector("#quote-text");
 const quoteAuthor = document.querySelector("#author");
 const quoteSource = document.querySelector("#source");
@@ -21,8 +22,9 @@ function newQuote() {
 			bagList.splice(bagList.indexOf(randomQuote), 1);
 			lastPicked = randomQuote;
 
-			quoteText.style.height =
+			quoteWrapper.style.height =
 				1.3 * (randomQuote.content.match(/\n/g) || []).length + 2 + "em";
+
 			var quoteContent = randomQuote.content.replace(/\n/g, "<br>");
 
 			if (typed) {
@@ -32,8 +34,9 @@ function newQuote() {
 
 			typed = new Typed("#quote-text", {
 				strings: [quoteContent],
-				typeSpeed: 20,
-				showCursor: false,
+				typeSpeed: 35,
+				cursorChar: "█",
+				fadeOut: true
 			});
 
 			quoteAuthor.innerHTML = randomQuote.author;
