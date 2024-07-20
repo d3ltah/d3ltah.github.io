@@ -33,9 +33,9 @@ function newQuote() {
 			} 
 
 			typed = new Typed("#quote-text", {
-				strings: [quoteContent],
+				strings: [quoteContent+" "],
 				typeSpeed: 35,
-				cursorChar: "█",
+				cursorChar: " _",
 				fadeOut: true
 			});
 

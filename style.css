@@ -317,6 +317,12 @@ hr {
 	pointer-events: none;
 }
 
+.typed-cursor {
+	width: 0;
+	margin: -1ch;
+	
+}
+
 #top {
 	display: flex;
 	justify-content: space-between;
