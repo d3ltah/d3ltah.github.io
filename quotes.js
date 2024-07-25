@@ -30,13 +30,13 @@ function newQuote() {
 			if (typed) {
 				console.log();
 				typed.destroy();
-			} 
+			}
 
 			typed = new Typed("#quote-text", {
-				strings: [quoteContent+" "],
+				strings: [quoteContent + " "],
 				typeSpeed: 35,
 				cursorChar: " _",
-				fadeOut: true
+				fadeOut: true,
 			});
 
 			quoteAuthor.innerHTML = randomQuote.author;

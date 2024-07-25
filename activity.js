@@ -2,6 +2,8 @@ const SpotifyContainer = document.getElementById("spotify-container");
 const ArtistsContainer = document.getElementById("spotify-artists");
 const key = "6789c0120d1863a44196d2880b1c39b0";
 
+const steamDataURL = "https://steamcommunity.com/id/BingBingPie?xml=1";
+
 function updateSpotifyDisplay() {
 	fetch(
 		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&api_key=${key}&format=json&limit=1&user=bbqbeanburger&extended=1`
@@ -10,17 +12,15 @@ function updateSpotifyDisplay() {
 		.then((json) => {
 			var track = json.recenttracks.track[0];
 			document.getElementById("spotify-title").innerHTML = track.name;
-			document.getElementById("spotify-artist").innerHTML =
-				"by " + track.artist.name.toUpperCase();
+			document.getElementById("spotify-artist").innerHTML = track.artist.name.toUpperCase();
 			document.getElementById("spotify-img").src = track.image[3]["#text"];
 
 			document.getElementById("spotify-button").href = track.url;
 
 			if (track.name != track.album["#text"]) {
-				document.getElementById("spotify-album").innerHTML =
-					"on " + track.album["#text"];
+				document.getElementById("spotify-album").innerHTML = track.album["#text"].toUpperCase();
 				document.getElementById("spotify-album").style.width = "100%";
-				document.getElementById("spotify-album").style.height = "1.2em";
+				document.getElementById("spotify-album").style.height = "1em";
 			} else {
 				document.getElementById("spotify-album").style.width = "0";
 				document.getElementById("spotify-album").style.height = "0";
@@ -43,7 +43,9 @@ function updateSpotifyDisplay() {
 					0
 				);
 				document.getElementById("spotify-uts").innerHTML =
-					"Activity <span style='font-weight: 300'>- " + timeSince(track.date.uts * 1000) + " ago</span>";
+					"Last Played <span style='font-weight: 300'>- " +
+					timeSince(track.date.uts * 1000) +
+					" ago</span>";
 				document.getElementById("spotify-img").style.animation = "none";
 			}
 		});

@@ -16,7 +16,6 @@ fetch(
 )
 	.then((response) => response.json())
 	.then((json) => {
-		console.log(json);
 		temp.innerHTML = Math.round(json.current.temperature_2m) + "°C";
 	});
 

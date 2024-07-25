@@ -520,6 +520,7 @@ hr {
 }
 
 #spotify-song {
+	font-family: "DM Mono", monospace;
 	display: flex;
 	overflow: clip;
 }
@@ -531,7 +532,7 @@ hr {
 
 #spotify-title {
 	text-transform: uppercase;
-	font-weight: bold;
+	line-height: 1em;
 	font-size: 1.2em;
 	animation: var(--accent);
 	transition: all 0.5s var(--bounce-curve);
@@ -540,13 +541,15 @@ hr {
 
 #spotify-artist {
 	font-size: 0.8em;
+	line-height: 1em;
 	transition: all 0.5s var(--bounce-curve);
 	text-overflow: ellipsis;
 }
 
 #spotify-album {
-	font-size: 0.8em;
-	opacity: 0.5;
+	font-size: 0.6em;
+	font-weight: bold;
+	line-height: 1em;
 	width: 0;
 	transition: all 0.5s var(--bounce-curve);
 	overflow: hidden;
@@ -578,7 +581,11 @@ hr {
 }
 
 #spotify-info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 	align-self: center;
+	/* gap: px; */
 }
 
 #spotify-info p {
