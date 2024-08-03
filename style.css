@@ -1,10 +1,4 @@
 @font-face {
-	font-family: "Satoshi";
-	src: url("./fonts/Satoshi-VariableFont_wght.ttf")
-		format("truetype-variations");
-}
-
-@font-face {
 	font-family: "DM Mono";
 	src: url("./fonts/DMMono-Regular.ttf") format("truetype");
 }
@@ -133,7 +127,8 @@ html {
 
 body {
 	margin: 0;
-	font-family: "Satoshi", sans-serif;
+	font-family: "Uncut Sans", sans-serif;
+	font-feature-settings: "wght" 200;
 	letter-spacing: 0.025em;
 	font-size: 1.2em;
 	color: var(--foreground);
@@ -176,8 +171,8 @@ h3 {
 	font-weight: normal;
 }
 
-h6 {
-	opacity: 1;
+h4 {
+	font-weight: 550;
 }
 
 h6 a {
@@ -227,7 +222,7 @@ ol {
 	margin: 20px 0;
 }
 
-a:hover {
+a:not(.social-link):hover {
 	opacity: 0.5;
 	cursor: pointer;
 }
@@ -286,7 +281,7 @@ hr {
 	flex-grow: 1;
 	font-weight: bold;
 	color: var(--foreground);
-	transition: background-color 0.2s ease-out;
+	transition: background-color 0.3s ease-out;
 	text-decoration: none;
 	border-radius: 1.5em;
 	height: 3em;
@@ -296,8 +291,7 @@ hr {
 }
 
 .social-link:hover {
-	background-color: var(--foreground);
-	color: var(--background);
+	color: #faf1f1;
 }
 
 .social-link i {
@@ -320,7 +314,6 @@ hr {
 .typed-cursor {
 	width: 0;
 	margin: -1ch;
-	
 }
 
 #top {
@@ -387,7 +380,6 @@ hr {
 }
 
 #new-quote-button {
-	font-family: "Satoshi", sans-serif;
 	font-size: 0.8em;
 	line-height: 1em;
 	margin: 0 auto;
@@ -418,6 +410,10 @@ hr {
 
 #discord-link:hover {
 	background-color: #5865f2;
+}
+
+#reddit-link:hover {
+	background-color: #ff4500;
 }
 
 #steam-link:hover {
@@ -550,7 +546,6 @@ hr {
 	font-size: 0.6em;
 	font-weight: bold;
 	line-height: 1em;
-	width: 0;
 	transition: all 0.5s var(--bounce-curve);
 	overflow: hidden;
 	white-space: nowrap;

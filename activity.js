@@ -16,15 +16,7 @@ function updateSpotifyDisplay() {
 			document.getElementById("spotify-img").src = track.image[3]["#text"];
 
 			document.getElementById("spotify-button").href = track.url;
-
-			if (track.name != track.album["#text"]) {
-				document.getElementById("spotify-album").innerHTML = track.album["#text"].toUpperCase();
-				document.getElementById("spotify-album").style.width = "100%";
-				document.getElementById("spotify-album").style.height = "1em";
-			} else {
-				document.getElementById("spotify-album").style.width = "0";
-				document.getElementById("spotify-album").style.height = "0";
-			}
+			document.getElementById("spotify-album").innerHTML = track.album["#text"].toUpperCase();
 
 			let nowPlaying = track["@attr"]
 				? track["@attr"].nowplaying === "true"
