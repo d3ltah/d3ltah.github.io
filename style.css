@@ -275,6 +275,7 @@ hr {
 }
 
 .social-link {
+	font-family: "DM Mono", monospace;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -589,6 +590,7 @@ hr {
 }
 
 #spotify-artists {
+	font-family: "DM Mono", monospace;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
